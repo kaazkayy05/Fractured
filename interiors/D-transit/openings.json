@@ -1,0 +1,53 @@
+{
+  "schema": "game-room.opening-schedule.v1",
+  "roomId": "nova-transit",
+  "primaryArrival": {
+    "openingId": "E02",
+    "exception": ""
+  },
+  "openings": [
+    {
+      "id": "E01",
+      "type": "door",
+      "wall": "east podium",
+      "widthMeters": 6,
+      "heightMeters": 4.5,
+      "thresholdMeters": 6,
+      "depthMeters": 0.4,
+      "destination": "Ramp to canal avenue at z=4.5",
+      "worldThreshold": [
+        -133.55227,
+        -251.41808,
+        6
+      ],
+      "booleanApplied": true
+    },
+    {
+      "id": "E02",
+      "type": "door",
+      "wall": "south podium",
+      "widthMeters": 6,
+      "heightMeters": 4.5,
+      "thresholdMeters": 6,
+      "depthMeters": 0.4,
+      "destination": "Ramp to terrain at z=2",
+      "worldThreshold": [
+        -157.28067,
+        -259.91038,
+        6
+      ],
+      "booleanApplied": true
+    },
+    {
+      "id": "W01",
+      "type": "window",
+      "wall": "north podium",
+      "widthMeters": 32,
+      "heightMeters": 6,
+      "sillMeters": 9,
+      "depthMeters": 0.4,
+      "destination": "Existing city exterior",
+      "booleanApplied": true
+    }
+  ]
+}

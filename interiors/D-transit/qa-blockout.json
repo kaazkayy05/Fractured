@@ -1,0 +1,353 @@
+{
+  "phase": "blockout",
+  "host": "Tower 047",
+  "floor_z": 6,
+  "gallery_z": 12,
+  "doors": {
+    "east": [
+      -133.552270165,
+      -251.418075561,
+      6
+    ],
+    "south": [
+      -157.280670165,
+      -259.910375561,
+      6
+    ]
+  },
+  "spawn": [
+    -157.28067016601562,
+    -257.4180603027344,
+    6.050000190734863
+  ],
+  "mesh_checks": [
+    {
+      "name": "Tower 047 | podium_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 7293.902546641845
+    },
+    {
+      "name": "Tower 047 | glazing_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 124014.92208516106
+    },
+    {
+      "name": "W01 north glazing_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 23.0419921875
+    },
+    {
+      "name": "Concourse slab_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 1315.7993735139826
+    },
+    {
+      "name": "Upper hall sealed ceiling_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 716.7533931109185
+    },
+    {
+      "name": "East entrance landing_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 8.760024061208242
+    },
+    {
+      "name": "East avenue access_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 17.999988555908175
+    },
+    {
+      "name": "East avenue access rail barrier_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 0.5656855619277508
+    },
+    {
+      "name": "East avenue access rail barrier.001_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 0.5656855619277508
+    },
+    {
+      "name": "Avenue threshold landing_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 10.68001353264117
+    },
+    {
+      "name": "South entrance landing_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 7.920045833598124
+    },
+    {
+      "name": "South ground access_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 18.0
+    },
+    {
+      "name": "South ground access rail barrier_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 0.5406371663249843
+    },
+    {
+      "name": "South ground access rail barrier.001_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 0.5406371663346476
+    },
+    {
+      "name": "South ground landing_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 4.799999713897705
+    },
+    {
+      "name": "South landing edge barrier_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 0.13771750136366734
+    },
+    {
+      "name": "South landing edge barrier.001_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 0.13771750136366734
+    },
+    {
+      "name": "East landing edge barrier_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 0.1555249244182919
+    },
+    {
+      "name": "East landing edge barrier.001_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 0.1555249244182919
+    },
+    {
+      "name": "Rear gallery_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 91.19991302490234
+    },
+    {
+      "name": "East gallery_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 75.59992790222168
+    },
+    {
+      "name": "Gallery accessible ramp_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 10.5
+    },
+    {
+      "name": "Gallery accessible ramp rail barrier_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 0.5096739699365522
+    },
+    {
+      "name": "Gallery accessible ramp rail barrier.001_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 0.5096739699365522
+    },
+    {
+      "name": "Ramp upper landing_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 4.199995994567871
+    },
+    {
+      "name": "Rear gallery inner edge barrier_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 1.4721402073626706
+    },
+    {
+      "name": "East gallery inner edge barrier_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 0.6173491192167164
+    },
+    {
+      "name": "East gallery front edge barrier_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 0.33241875650124086
+    },
+    {
+      "name": "East gallery lower inner edge barrier_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 0.5698607254308188
+    },
+    {
+      "name": "Upper landing outer edge barrier_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 0.2018256735900792
+    },
+    {
+      "name": "BLOCKOUT | Tram envelope_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 273.0125952768781
+    },
+    {
+      "name": "BLOCKOUT | Central planted island_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 19.178210264740795
+    },
+    {
+      "name": "BLOCKOUT | Ticket kiosk_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 2.3040467379067593
+    },
+    {
+      "name": "BLOCKOUT | Ticket kiosk.001_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 2.3040467379067593
+    },
+    {
+      "name": "BLOCKOUT | Ticket kiosk.002_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 2.3040467379067593
+    },
+    {
+      "name": "BLOCKOUT | Ticket kiosk.003_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 2.3040467379067593
+    },
+    {
+      "name": "BLOCKOUT | Ticket kiosk.004_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 2.3040467379067593
+    },
+    {
+      "name": "BLOCKOUT | Fare gate_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 0.4199810791760541
+    },
+    {
+      "name": "BLOCKOUT | Fare gate.001_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 0.4199810791760541
+    },
+    {
+      "name": "BLOCKOUT | Fare gate.002_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 0.4199810791760541
+    },
+    {
+      "name": "BLOCKOUT | Control pod floor_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 11.998858322909037
+    },
+    {
+      "name": "Rear gallery outer guard barrier_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 1.804558963863954
+    },
+    {
+      "name": "Rear gallery west guard barrier_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 0.2849303627153761
+    },
+    {
+      "name": "East gallery outer guard barrier_COL",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 1.5671169949345556
+    },
+    {
+      "name": "Tower 047 | podium",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 7293.902546641845
+    },
+    {
+      "name": "Tower 047 | glazing",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 124014.92208516109
+    },
+    {
+      "name": "Upper hall sealed ceiling",
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume": 716.7533931109185
+    }
+  ],
+  "triangles_visible": 11998,
+  "triangles_collision": 1060,
+  "ground_grid": {
+    "spacing_m": 1,
+    "samples": 3127,
+    "missing_floor": []
+  },
+  "known_issues": [
+    "Blockout only: props are labeled massing envelopes; no final detailing.",
+    "Upper circulation uses a visible 26.6-degree ramp; reference-style stairs remain a review decision.",
+    "Reference images were not individually attached; composition follows the supplied written brief.",
+    "Full player-capsule and ceiling-clearance navigation validation, and Veyra obstruction audit remain pending.",
+    "No Veyra interior has been built yet."
+  ],
+  "collision_surface_match": "Collision surfaces copy visible solid geometry exactly, including ramps and glass railing barriers.",
+  "paired_host_bounds_match": true,
+  "ramps": [
+    {
+      "name": "East avenue access",
+      "rise_m": 1.5,
+      "run_m": 12,
+      "slope_degrees": 7.125016348901798
+    },
+    {
+      "name": "South ground access",
+      "rise_m": 4,
+      "run_m": 12,
+      "slope_degrees": 18.43494882292201
+    },
+    {
+      "name": "Gallery accessible ramp",
+      "rise_m": 6,
+      "run_m": 12,
+      "slope_degrees": 26.56505117707799
+    }
+  ],
+  "camera": {
+    "location": [
+      -155.28067016601562,
+      -248.41807556152344,
+      7.699999809265137
+    ],
+    "lens_mm": 18,
+    "eye_above_floor_m": 1.7
+  },
+  "ceiling_difference": "The glazed vault is an interior canopy below retained upper tower floors; it does not open to the sky. Side glazing supplies the exterior views. This preserves the existing tower silhouette."
+}

@@ -27,3 +27,4 @@ Hali – Reality Shift & Fracture Energy
 - Reactions can disable machinery, create hazards, or open pathways.
 
 **Integration:** Structural Manipulation weakens objects, making chain reactions more effective. Chain reactions damage nearby structures, allowing new interactions. Environmental changes also affect enemy movement and pathways.
+Play the [Fractured canal crossing prototype](playtest/README.md) by opening playtest/project.godot in Godot 4.7.2.
