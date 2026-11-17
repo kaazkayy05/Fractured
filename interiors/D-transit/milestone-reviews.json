@@ -1,0 +1,33 @@
+{
+  "schema": "game-room.milestone-reviews.v1",
+  "roomId": "nova-transit",
+  "function": {
+    "status": "pending",
+    "approvedBy": "",
+    "approvedAt": "",
+    "evidence": [
+      "renders/D-interior-blockout.png",
+      "renders/D-topdown-blockout.png",
+      "qa-blockout.json",
+      "openings.json"
+    ],
+    "strangestElement": "Long visible upper circulation ramp, deliberately substituted for detailed stairs at blockout stage; review this choice.",
+    "notes": "User specifically requested a pause after each blockout before detailing. Approval has not been inferred. No paid generation or final composition performed."
+  },
+  "form": {
+    "status": "pending",
+    "approvedBy": "",
+    "approvedAt": "",
+    "evidence": [],
+    "strangestElement": "",
+    "notes": ""
+  },
+  "runtime": {
+    "status": "pending",
+    "approvedBy": "",
+    "approvedAt": "",
+    "evidence": [],
+    "strangestElement": "",
+    "notes": ""
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "game-room.room-final-report.v1",
+  "roomId": "nova-transit",
+  "status": "incomplete-blockout-review",
+  "blend": "../Nova_City_interiors.blend",
+  "qa": "qa-blockout.json",
+  "notYetBuilt": [
+    "G",
+    "A",
+    "F",
+    "C",
+    "H",
+    "B",
+    "J",
+    "K",
+    "I"
+  ],
+  "exported": false,
+  "originalsModified": false
+}

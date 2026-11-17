@@ -1,0 +1,59 @@
+{
+  "schema": "game-room.layout.v1",
+  "roomId": "nova-transit",
+  "units": "meters",
+  "sourceBuilder": "../build_transit.py",
+  "host": "Tower 047",
+  "origin": [
+    -161.28067,
+    -229.41808,
+    0
+  ],
+  "floorHeights": [
+    6,
+    12
+  ],
+  "ceilingHeight": 32.6,
+  "stage": "review blockout",
+  "placements": [
+    {
+      "id": "tram",
+      "position": [
+        -12,
+        -1,
+        7.75
+      ],
+      "dimensions": [
+        3.4,
+        24,
+        3.5
+      ]
+    },
+    {
+      "id": "island",
+      "position": [
+        0,
+        0,
+        6.3
+      ],
+      "dimensions": [
+        6.4,
+        6.4,
+        0.6
+      ]
+    },
+    {
+      "id": "control-pod",
+      "position": [
+        15,
+        8,
+        12
+      ],
+      "dimensions": [
+        6.2,
+        6.2,
+        3.5
+      ]
+    }
+  ]
+}

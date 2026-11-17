@@ -1,0 +1,75 @@
+{
+  "schema": "game-room.room-brief.v1",
+  "roomId": "nova-transit",
+  "family": "gameplay-room",
+  "purpose": "Walkable paired-timeline transit concourse; first room blockout for review.",
+  "runtimeSurface": "Blender authoring for future game-engine integration; no engine export requested.",
+  "boundsMeters": [
+    55.4568,
+    60.9846,
+    27
+  ],
+  "hero": {
+    "id": "crystal-island",
+    "role": "Central orientation landmark",
+    "reservedBoundsMeters": [
+      6.4,
+      6.4,
+      5.5
+    ]
+  },
+  "symmetry": {
+    "mode": "bilateral",
+    "order": 2,
+    "appliesTo": [
+      "vault ribs"
+    ],
+    "exceptions": [
+      "Tram west, ticketing east, upper control pod northeast, unequal entry approaches follow existing city geometry."
+    ]
+  },
+  "circulation": {
+    "description": "Two 6m entrances; central concourse loop, east avenue ramp, south ground ramp, upper gallery ramp. Reserved props remain outside primary entry route.",
+    "minimumClearanceMeters": 1.5
+  },
+  "productionCamera": {
+    "viewport": [
+      1200,
+      800
+    ],
+    "location": [
+      -155.28067016601562,
+      -248.41807556152344,
+      7.699999809265137
+    ],
+    "target": [
+      -163.280670165,
+      -224.418075561,
+      14
+    ],
+    "verticalFovDegrees": 67.38
+  },
+  "performanceBudget": {
+    "maxSceneTriangles": 300000,
+    "maxVLowBytes": 0,
+    "maxHighTextureBytes": 0
+  },
+  "creditBudget": {
+    "maximumCredits": 0,
+    "approvalRequired": true
+  },
+  "environment": {
+    "type": "none",
+    "identity": "",
+    "source": "",
+    "assignmentKey": ""
+  },
+  "artifacts": {
+    "floorPlan": "renders/D-topdown-blockout.png",
+    "reflectedCeilingPlan": "",
+    "planMetadata": "plan-metadata.json",
+    "wallElevations": [],
+    "visualTarget": "reference-brief.md",
+    "openingContactSheet": ""
+  }
+}
