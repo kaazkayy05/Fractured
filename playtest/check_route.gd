@@ -8,6 +8,7 @@ func check():
  if main.worlds.size()!=2 or not main.player.is_on_floor():
   printerr("Spawn floor failed");quit(1);return
  for i in 5:
+  main.switch_world(main.REQUIRED_REALITIES[i])
   main.player.position=main.POINTS[i]+Vector3(0,0.15,0) if i!=0 else main.POINTS[i]+Vector3(4,0.15,0)
   main.player.velocity=Vector3.ZERO
   for n in 22: await physics_frame
