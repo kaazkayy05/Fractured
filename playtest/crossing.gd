@@ -9,10 +9,15 @@ const TRAINING_TARGETS: Array[Vector3] = [Vector3(-135.5, 6, 255.5), Vector3(-78
 const ECHO_REPLAY_SECONDS := 8.0
 const ECHO_LIFETIME_SECONDS := 8.0
 const ECHO_COOLDOWN_SECONDS := 10.0
+const RECALL_HISTORY_SECONDS := 4.0
+const RECALL_ECHO_LIFETIME_SECONDS := 4.0
+const RECALL_ENERGY_COST := 25.0
+const RECALL_COOLDOWN_SECONDS := 12.0
 
 var worlds: Array[Node3D] = []
 var bodies: Array[StaticBody3D] = []
 var player := CharacterBody3D.new()
+var player_collision: CollisionShape3D
 var camera := Camera3D.new()
 var beacon := MeshInstance3D.new()
 var hud := Label.new()
@@ -44,6 +49,11 @@ var echo_path_start := 0.0
 var echo_times: Array[float] = []
 var echo_positions: Array[Vector3] = []
 var echo_segment := 0
+var recall_requested := false
+var recall_cooldown := 0.0
+var recall_anchor: MeshInstance3D
+var echo_bar: ProgressBar
+var recall_bar: ProgressBar
 
 func _ready() -> void:
 	for path: String in FILES:
@@ -96,6 +106,7 @@ func _build_player() -> void:
 	shape.shape = capsule
 	shape.position.y = 0.9
 	player.add_child(shape)
+	player_collision = shape
 	player.floor_snap_length = 0.35
 	player.position = checkpoints[0]
 	player.add_child(camera)
@@ -141,6 +152,7 @@ func _build_hud() -> void:
 	hud.position = Vector2(18, 15)
 	hud.add_theme_font_size_override("font_size", 19)
 	hud.add_theme_constant_override("outline_size", 6)
+	_build_ability_bars(canvas)
 	var orb := SphereMesh.new()
 	orb.radius = 0.34
 	orb.height = 0.68
@@ -157,6 +169,46 @@ func _build_hud() -> void:
 	marker.font_size = 23
 	marker.outline_size = 6
 	add_child(marker)
+
+func _build_ability_bars(canvas: CanvasLayer) -> void:
+	var rows := VBoxContainer.new()
+	rows.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	rows.add_theme_constant_override("separation", 4)
+	canvas.add_child(rows)
+	rows.set_anchors_preset(Control.PRESET_BOTTOM_RIGHT)
+	rows.offset_left = -254.0
+	rows.offset_top = -60.0
+	rows.offset_right = -16.0
+	rows.offset_bottom = -16.0
+	echo_bar = _add_ability_bar(rows, "C · Echo Projection", Color("#DCE6EE"))
+	recall_bar = _add_ability_bar(rows, "V · Rift Recall", Color("#00E5FF"))
+
+func _add_ability_bar(rows: VBoxContainer, caption: String, color: Color) -> ProgressBar:
+	var row := HBoxContainer.new()
+	row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_theme_constant_override("separation", 8)
+	rows.add_child(row)
+
+	var bar := ProgressBar.new()
+	bar.custom_minimum_size = Vector2(100, 8)
+	bar.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	bar.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	bar.show_percentage = false
+	bar.step = 0.0
+	var track := StyleBoxFlat.new()
+	track.bg_color = Color("#23323A")
+	var fill := StyleBoxFlat.new()
+	fill.bg_color = color
+	bar.add_theme_stylebox_override("background", track)
+	bar.add_theme_stylebox_override("fill", fill)
+	row.add_child(bar)
+
+	var label := Label.new()
+	label.text = caption
+	label.add_theme_font_size_override("font_size", 13)
+	label.add_theme_constant_override("outline_size", 4)
+	row.add_child(label)
+	return bar
 
 func switch_world(index: int) -> void:
 	timeline = index
@@ -327,9 +379,21 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
 		match event.physical_keycode:
 			KEY_ESCAPE: Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-			KEY_Q: reality_shift()
+			KEY_Q:
+				reality_shift()
+				if shift_in_progress:
+					if recall_requested:
+						recall_requested = false
+						_show_message("Rift Recall is unavailable during Reality Shift.")
+					_show_recall_shift_block()
 			KEY_F: fracture_burst()
 			KEY_C: _try_spawn_echo()
+			KEY_V:
+				if shift_in_progress:
+					_show_message("Rift Recall is unavailable during Reality Shift.")
+					_show_recall_shift_block()
+				else:
+					recall_requested = true
 			KEY_R:
 				player.position = checkpoints[timeline]
 				player.velocity = Vector3.ZERO
@@ -346,6 +410,7 @@ func _physics_process(dt: float) -> void:
 		return
 	movement_time += dt
 	echo_cooldown = maxf(0.0, echo_cooldown - dt)
+	recall_cooldown = maxf(0.0, recall_cooldown - dt)
 	shift_cooldown = maxf(0.0, shift_cooldown - dt)
 	burst_cooldown = maxf(0.0, burst_cooldown - dt)
 	feedback_timer = maxf(0.0, feedback_timer - dt)
@@ -384,6 +449,7 @@ func _physics_process(dt: float) -> void:
 	else:
 		_record_movement()
 	_update_echo(dt)
+	_update_recall()
 	_update_hud()
 
 func _reset_movement_history() -> void:
@@ -407,10 +473,10 @@ func _try_spawn_echo() -> void:
 	if is_instance_valid(echo):
 		_show_message("An echo is already active")
 		return
-	var start_time := movement_time - ECHO_REPLAY_SECONDS
-	if movement_times.size() < 2 or movement_times[0] > start_time:
+	if not _has_history(ECHO_REPLAY_SECONDS):
 		_show_message("Echo Projection needs 8 seconds of movement history.")
 		return
+	var start_time := movement_time - ECHO_REPLAY_SECONDS
 
 	echo_times = movement_times.duplicate()
 	echo_positions = movement_positions.duplicate()
@@ -434,6 +500,8 @@ func _try_spawn_echo() -> void:
 	echo = Node3D.new()
 	echo.position = _echo_position_at(start_time)
 	echo.add_child(visual)
+	recall_anchor = _make_recall_anchor()
+	echo.add_child(recall_anchor)
 	add_child(echo)
 	echo_cooldown = ECHO_COOLDOWN_SECONDS
 
@@ -451,10 +519,123 @@ func _update_echo(dt: float) -> void:
 	if echo_remaining <= 0.0:
 		echo.queue_free()
 		echo = null
+		recall_anchor = null
 		return
 	echo.visible = echo_reality == timeline
 	echo_replay_elapsed = minf(echo_replay_elapsed + dt, ECHO_REPLAY_SECONDS)
 	echo.position = _echo_position_at(echo_path_start + echo_replay_elapsed)
+
+func _has_history(seconds: float) -> bool:
+	return movement_times.size() >= 2 and movement_times[0] <= movement_time - seconds
+
+func _history_progress(seconds: float) -> float:
+	if _has_history(seconds):
+		return 1.0
+	if movement_times.is_empty():
+		return 0.0
+	return clampf((movement_time - movement_times[0]) / seconds, 0.0, 0.98)
+
+func _recall_destination_is_clear(destination: Vector3) -> bool:
+	var destination_transform := player.transform
+	destination_transform.origin = destination
+	var collision_transform := global_transform * destination_transform * player_collision.transform
+	# Allow ordinary floor contact without shrinking the capsule.
+	collision_transform.origin += Vector3.UP * 0.001
+
+	var query := PhysicsShapeQueryParameters3D.new()
+	query.shape = player_collision.shape
+	query.transform = collision_transform
+	query.collision_mask = player.collision_mask
+	query.exclude = [player.get_rid()]
+	return get_world_3d().direct_space_state.intersect_shape(query, 1).is_empty()
+
+func _show_recall_shift_block() -> void:
+	if is_instance_valid(recall_anchor):
+		recall_anchor.hide()
+	_update_ability_bars(is_instance_valid(echo), true)
+
+func _update_recall() -> void:
+	var has_echo := is_instance_valid(echo)
+	var destination := Vector3.INF
+	var blocker := ""
+	if shift_in_progress:
+		blocker = "Rift Recall is unavailable during Reality Shift."
+	elif fracture_energy < RECALL_ENERGY_COST:
+		blocker = "Rift Recall needs 25 Fracture Energy."
+	elif has_echo and echo_reality != timeline:
+		blocker = "Your echo is in the other reality."
+	else:
+		destination = echo.position if has_echo else _recall_history_position()
+		if destination != Vector3.INF and not _recall_destination_is_clear(destination):
+			blocker = "Rift Recall destination is blocked."
+
+	if recall_requested:
+		recall_requested = false
+		if recall_cooldown > 0.0:
+			_show_message("Rift Recall recharging: %.1fs" % recall_cooldown)
+		elif not blocker.is_empty():
+			_show_message(blocker)
+		elif destination == Vector3.INF:
+			_show_message("Rift Recall needs 4 seconds of movement history.")
+		else:
+			player.position = destination
+			player.velocity = Vector3.ZERO
+			_reset_movement_history()
+			fracture_energy -= RECALL_ENERGY_COST
+			recall_cooldown = RECALL_COOLDOWN_SECONDS
+			if has_echo:
+				echo_remaining = RECALL_ECHO_LIFETIME_SECONDS
+			if fracture_energy < RECALL_ENERGY_COST:
+				blocker = "Rift Recall needs 25 Fracture Energy."
+
+	if has_echo:
+		recall_anchor.visible = recall_cooldown <= 0.0 and blocker.is_empty()
+	_update_ability_bars(has_echo, not blocker.is_empty())
+
+func _recall_history_position() -> Vector3:
+	if not _has_history(RECALL_HISTORY_SECONDS):
+		return Vector3.INF
+	var sample_time := movement_time - RECALL_HISTORY_SECONDS
+	for index in range(1, movement_times.size()):
+		if movement_times[index] >= sample_time:
+			var weight := inverse_lerp(movement_times[index - 1], movement_times[index], sample_time)
+			return movement_positions[index - 1].lerp(movement_positions[index], weight)
+	return Vector3.INF
+
+func _make_recall_anchor() -> MeshInstance3D:
+	var anchor := MeshInstance3D.new()
+	var sphere := SphereMesh.new()
+	sphere.radius = 0.18
+	sphere.height = 0.36
+	var material := StandardMaterial3D.new()
+	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	material.albedo_color = Color("#00E5FF")
+	anchor.mesh = sphere
+	anchor.material_override = material
+	anchor.position.y = 2.1
+	anchor.hide()
+	return anchor
+
+func _update_ability_bars(has_echo: bool, recall_blocked: bool) -> void:
+	var echo_progress := minf(
+		1.0 - echo_cooldown / ECHO_COOLDOWN_SECONDS,
+		_history_progress(ECHO_REPLAY_SECONDS)
+	)
+	if has_echo:
+		echo_progress = minf(echo_progress, 0.90)
+	elif echo_cooldown > 0.0:
+		echo_progress = minf(echo_progress, 0.98)
+	echo_bar.value = echo_progress * 100.0
+
+	var recall_progress := 1.0 - recall_cooldown / RECALL_COOLDOWN_SECONDS
+	if not has_echo:
+		recall_progress = minf(recall_progress, _history_progress(RECALL_HISTORY_SECONDS))
+	if recall_blocked:
+		recall_progress = minf(recall_progress, 0.90)
+	elif recall_cooldown > 0.0:
+		recall_progress = minf(recall_progress, 0.98)
+	recall_bar.value = recall_progress * 100.0
+	recall_bar.modulate.a = 0.55 if recall_blocked else 1.0
 
 func _update_hud() -> void:
 	var shift_text: String = "ready" if shift_cooldown <= 0.0 else "%.1fs" % shift_cooldown
