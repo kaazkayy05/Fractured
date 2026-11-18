@@ -2,6 +2,37 @@
 
 Fractured is a 3D action adventure set in two connected realities, Nova and Veyra. The canal crossing is the current playable slice: explore the Nova transit station, cross between the cities, recover the echo, and return to the fracture.
 
+## Play the full story (Scenes 1–8)
+
+Open the **root** `project.godot` in Godot 4.7.2 and press F5. The game runs the whole scene breakdown in order: Research Facility, City Streets, Transit Station, Central Reactor, then the merged city and credits. City Streets loads the team's Nova/Veyra city meshes straight from `playtest/worlds/`, so run `git lfs pull` first. Without them a placeholder street is used.
+
+| Key | Action | Unlocked in |
+| --- | --- | --- |
+| WASD / Space / Shift / Mouse | Move, jump, sprint, look (Esc frees the mouse) | Scene 1 |
+| E | Interact; hold E on power and convergence nodes | Scene 1 |
+| Q / F | Reality Shift / Fracture Burst | Scene 2 |
+| LMB / RMB | Attack combo / Guard (guard just before a hit to counter) | Scene 3 |
+| C / V | Echo Projection / Rift Recall | Scene 3 |
+| E / G | Structural Manipulation (unstable structures) / Chain Reaction | Scene 4 |
+| F9 | Skip to the next scene (testing) | any |
+
+To start at a given scene, run `Godot --path . -- --scene=4`. Win by merging the realities in Scene 7. You lose if health reaches 0 or instability hits the critical limit during the final encounter. Retry restarts from the current scene.
+
+The code follows the architecture diagram, one script per box in `scripts/`:
+
+- `Main.gd` handles scene progression.
+- Location scenes (`ResearchFacility`, `CityStreets`, `TransitStation`, `CentralReactor`) extend `Location.gd`.
+- Player components: `Player`, `RealityShift`, `FractureEnergy`, `Combat`, `DefensiveCounter`, `EchoProjection`, `ChainReaction`.
+- World scripts: `Structure`, `EnemyAI`.
+- `RealityManager` and `InstabilityManager` are autoloads.
+- Rooms are the exported `.glb` files in `export/`, and their Blender sources are in `art/source/`.
+
+`tests/Playthrough.tscn` drives Scenes 1–8 automatically and checks that every objective point stands on real floor:
+
+```
+Godot --headless --path . res://tests/Playthrough.tscn
+```
+
 ## Play the crossing
 
 Install Git LFS before cloning, or run `git lfs pull` in an existing clone. Open `playtest/project.godot` in Godot 4.7.2, let the city meshes import, and press F5.

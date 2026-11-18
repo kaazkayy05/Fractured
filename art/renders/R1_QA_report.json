@@ -1,0 +1,469 @@
+{
+  "plan": {
+    "footprint": [
+      24.0,
+      18.0
+    ],
+    "chamfer": 3.0,
+    "ceiling": 8.0,
+    "octagon": [
+      [
+        -9.0,
+        -9.0
+      ],
+      [
+        9.0,
+        -9.0
+      ],
+      [
+        12.0,
+        -6.0
+      ],
+      [
+        12.0,
+        6.0
+      ],
+      [
+        9.0,
+        9.0
+      ],
+      [
+        -9.0,
+        9.0
+      ],
+      [
+        -12.0,
+        6.0
+      ],
+      [
+        -12.0,
+        -6.0
+      ]
+    ]
+  },
+  "front_zone": {
+    "y": [
+      -9.0,
+      0.0
+    ],
+    "z": 0.0
+  },
+  "tiers": [
+    {
+      "y": [
+        0.0,
+        3.0
+      ],
+      "z": 0.5
+    },
+    {
+      "y": [
+        3.0,
+        6.0
+      ],
+      "z": 1.0
+    },
+    {
+      "y": [
+        6.0,
+        9.0
+      ],
+      "z": 1.5
+    }
+  ],
+  "aisle": {
+    "width": 3.0,
+    "steps_per_tier": 3,
+    "rise": 0.1667,
+    "tread": 0.3
+  },
+  "doors": {
+    "entry": [
+      -12.0,
+      -3.0,
+      0.0
+    ],
+    "to_R2": [
+      12.0,
+      -3.0,
+      0.0
+    ],
+    "w": 4.0,
+    "h": 4.0,
+    "leaves": "2 x 2 m sliding, separate"
+  },
+  "window": {
+    "x": [
+      -8.0,
+      8.0
+    ],
+    "z": [
+      1.5,
+      7.5
+    ],
+    "size": [
+      16.0,
+      6.0
+    ]
+  },
+  "desks": {
+    "tier1": 6,
+    "tier2": 6,
+    "tier3": 4
+  },
+  "desk_size": [
+    2.4,
+    0.8,
+    1.1
+  ],
+  "struts_x": [
+    -9.2,
+    -5.0,
+    5.0,
+    9.2
+  ],
+  "sightlines": {
+    "aisle_foot": "12/12 window points visible",
+    "entry_door": "7/12 window points visible"
+  },
+  "landmarks": {
+    "LM_R1_Entry": [
+      -12.0,
+      -3.0,
+      0.0
+    ],
+    "LM_R1_ToR2": [
+      12.0,
+      -3.0,
+      0.0
+    ],
+    "LM_R1_Aisle": [
+      0.0,
+      -8.0,
+      0.0
+    ],
+    "LM_R1_Window": [
+      0.0,
+      9.0,
+      1.5
+    ],
+    "LM_R1_Tier1": [
+      0.0,
+      0.0,
+      0.5
+    ],
+    "LM_R1_Tier2": [
+      0.0,
+      3.0,
+      1.0
+    ],
+    "LM_R1_Tier3": [
+      0.0,
+      6.0,
+      1.5
+    ]
+  },
+  "tris_export_unique": 2209,
+  "tris_export_instanced": 3918,
+  "budget": 100000,
+  "renders": {
+    "topdown": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\R1_detail_topdown.png",
+    "eye": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\R1_detail_eyeheight.png",
+    "hero": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\R1_detail_hero34.png",
+    "eye_flat_ambient": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\R1_detail_eyeheight_flat.png"
+  },
+  "qa": {
+    "asset": "R1",
+    "scale_not_applied": [],
+    "negative_scale": [],
+    "rotation_not_applied": [],
+    "instanced_rotations": 14,
+    "geometry_fail_visual": [],
+    "geometry_fail_collision": [],
+    "open_visual_meshes": [
+      "SM_R1_TierRail_1L",
+      "SM_R1_TierRail_1R",
+      "SM_R1_TierRail_2L",
+      "SM_R1_TierRail_2R",
+      "SM_R1_TierRail_3L",
+      "SM_R1_TierRail_3R",
+      "SM_R1_FloorLines",
+      "MOD_R_BlastDoor_Frame",
+      "SM_R1_DoorStubs",
+      "MOD_R_WarningStrut",
+      "SM_R1_ReactorCard",
+      "SM_R1_ReactorBackdrop"
+    ],
+    "colonly_suffix_missing": [],
+    "collision_on_decorative": [],
+    "off_grid_modules": [],
+    "seams": {
+      "floor_tiles": 0,
+      "wall_rows": 0,
+      "wall_seam_failures": [],
+      "wall_openings": []
+    },
+    "walk": {
+      "samples": 432,
+      "holes": [],
+      "slopes_over_35": [],
+      "ceilings_under_2_5": [],
+      "min_ceiling_m": 6.5,
+      "drops_guarded": 23,
+      "drops_unguarded": [],
+      "drops_designed_hazard": 0
+    },
+    "tris": {
+      "per_collection": {
+        "R1_Export": {
+          "unique": 2209,
+          "instanced": 3918
+        },
+        "R1_Backdrop": {
+          "unique": 650,
+          "instanced": 650
+        },
+        "R1_Collision": {
+          "unique": 704,
+          "instanced": 704
+        },
+        "R1_FX": {
+          "unique": 0,
+          "instanced": 0
+        }
+      },
+      "export_unique": 2209,
+      "export_instanced": 3918,
+      "budget": 100000,
+      "within_budget": true,
+      "heaviest_meshes": [
+        [
+          "MOD_R_OperatorDesk",
+          72,
+          16
+        ],
+        [
+          "SM_R1_ReactorCard",
+          648,
+          1
+        ],
+        [
+          "MOD_R_BlastDoor_Frame",
+          196,
+          2
+        ],
+        [
+          "MOD_R_WarningStrut",
+          67,
+          4
+        ],
+        [
+          "SM_R1_Walls",
+          180,
+          1
+        ],
+        [
+          "SM_R1_WallBand",
+          132,
+          1
+        ],
+        [
+          "SM_R1_WindowFrame",
+          108,
+          1
+        ],
+        [
+          "MOD_R_WallRib",
+          12,
+          8
+        ],
+        [
+          "MOD_R_BlastDoor_Leaf",
+          24,
+          4
+        ],
+        [
+          "MOD_R_AisleStep_3m",
+          28,
+          3
+        ],
+        [
+          "SM_R1_TierFascia",
+          72,
+          1
+        ],
+        [
+          "SM_R1_CeilingBeams",
+          48,
+          1
+        ]
+      ]
+    },
+    "materials": {
+      "materials": [
+        "M_AmberWarning",
+        "M_Charcoal",
+        "M_CyanEmissive",
+        "M_NovaGlass",
+        "M_NovaSilver"
+      ],
+      "over_4_slots": [],
+      "procedural_nodes": [],
+      "violet_outside_fx": []
+    },
+    "landmarks": {
+      "LM_R1_Entry": [
+        -12.0,
+        -3.0,
+        0.0
+      ],
+      "LM_R1_ToR2": [
+        12.0,
+        -3.0,
+        0.0
+      ],
+      "LM_R1_Aisle": [
+        0.0,
+        -8.0,
+        0.0
+      ],
+      "LM_R1_Window": [
+        0.0,
+        9.0,
+        1.5
+      ],
+      "LM_R1_Tier1": [
+        0.0,
+        0.0,
+        0.5
+      ],
+      "LM_R1_Tier2": [
+        0.0,
+        3.0,
+        1.0
+      ],
+      "LM_R1_Tier3": [
+        0.0,
+        6.0,
+        1.5
+      ]
+    },
+    "landmark_pair": {
+      "LM_R1_Aisle": {
+        "this": [
+          0.0,
+          -8.0,
+          0.0
+        ],
+        "pair": [
+          0.0,
+          -8.0,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_R1_Entry": {
+        "this": [
+          -12.0,
+          -3.0,
+          0.0
+        ],
+        "pair": [
+          -12.0,
+          -3.0,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_R1_Tier1": {
+        "this": [
+          0.0,
+          0.0,
+          0.5
+        ],
+        "pair": [
+          0.0,
+          0.0,
+          0.5
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_R1_Tier2": {
+        "this": [
+          0.0,
+          3.0,
+          1.0
+        ],
+        "pair": [
+          0.0,
+          3.0,
+          1.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_R1_Tier3": {
+        "this": [
+          0.0,
+          6.0,
+          1.5
+        ],
+        "pair": [
+          0.0,
+          6.0,
+          1.5
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_R1_ToR2": {
+        "this": [
+          12.0,
+          -3.0,
+          0.0
+        ],
+        "pair": [
+          12.0,
+          -3.0,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_R1_Window": {
+        "this": [
+          0.0,
+          9.0,
+          1.5
+        ],
+        "pair": [
+          0.0,
+          9.0,
+          1.5
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      }
+    },
+    "landmark_pair_missing_here": [],
+    "landmark_only_here": [],
+    "landmark_pair_ok": true,
+    "pass": true,
+    "export": {
+      "glb_bytes": 180752,
+      "exported_objects": 80,
+      "reimported_objects": 80,
+      "missing_after_reimport": [],
+      "origin_mismatch": [],
+      "colonly_exported": 13,
+      "colonly_reimported": 13,
+      "ok": true
+    }
+  },
+  "rotations_baked": [],
+  "blend": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\source\\Fractured_R1_ReactorControlHall.blend",
+  "glb": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\export\\Fractured_R1_ReactorControlHall.glb"
+}

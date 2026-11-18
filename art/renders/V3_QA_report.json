@@ -1,0 +1,415 @@
+{
+  "asset": "V3",
+  "scale_not_applied": [],
+  "negative_scale": [],
+  "rotation_not_applied": [],
+  "instanced_rotations": 124,
+  "geometry_fail_visual": [],
+  "geometry_fail_collision": [],
+  "open_visual_meshes": [
+    "MOD_N_Railing_Glass_4m",
+    "MOD_N_Railing_Glass_3.5m",
+    "MOD_N_Railing_Glass_3m",
+    "MOD_N_Railing_Glass_2.3m",
+    "MOD_N_Railing_Glass_1m",
+    "MOD_N_Railing_Glass_2m",
+    "MOD_N_Railing_Glass_2.2m",
+    "MOD_N_DoorFrame_4x4",
+    "MOD_N_DoorFrame_2x3",
+    "SM_V3_EntranceStub_Main",
+    "SM_V3_EntranceStub_Side",
+    "MOD_N_Bench",
+    "MOD_N_VineCard_3m",
+    "MOD_N_VineCard_2m",
+    "MOD_N_Skylight_4x4",
+    "MOD_V_AptDoor",
+    "MOD_N_AptVestibule",
+    "MOD_V_AptInterior",
+    "MOD_V_SleepingMat",
+    "MOD_V_WaterBarrel",
+    "MOD_V_SupplyCrate",
+    "MOD_V_Lantern",
+    "MOD_V_LightSpill"
+  ],
+  "colonly_suffix_missing": [],
+  "collision_on_decorative": [],
+  "off_grid_modules": [],
+  "seams": {
+    "floor_tiles": 54,
+    "floor_extent": [
+      -15.0,
+      15.0,
+      -11.0,
+      11.0
+    ],
+    "floor_area": 660.0,
+    "floor_extent_area": 660.0,
+    "floor_overlap_m2": 0.0,
+    "floor_gap_m2": 0.0,
+    "wall_rows": 16,
+    "wall_seam_failures": [],
+    "wall_openings": [
+      {
+        "row": "(180, -11.0, 0.0)",
+        "gap_m": 4.0,
+        "at": -2.0
+      }
+    ]
+  },
+  "walk": {
+    "samples": 660,
+    "holes": [],
+    "slopes_over_35": [],
+    "ceilings_under_2_5": [],
+    "min_ceiling_m": 3.58,
+    "drops_guarded": 43,
+    "drops_unguarded": [],
+    "drops_designed_hazard": 0
+  },
+  "tris": {
+    "per_collection": {
+      "V3_Export": {
+        "unique": 4596,
+        "instanced": 15254
+      },
+      "V3_Roof": {
+        "unique": 124,
+        "instanced": 1368
+      },
+      "V3_Apartments": {
+        "unique": 294,
+        "instanced": 1860
+      },
+      "V3_Banyan": {
+        "unique": 2020,
+        "instanced": 2020
+      },
+      "V3_Habitation": {
+        "unique": 816,
+        "instanced": 3764
+      },
+      "V3_Collision": {
+        "unique": 4354,
+        "instanced": 4354
+      },
+      "V3_FX": {
+        "unique": 0,
+        "instanced": 0
+      }
+    },
+    "export_unique": 4596,
+    "export_instanced": 15254,
+    "budget": 150000,
+    "within_budget": true,
+    "heaviest_meshes": [
+      [
+        "MOD_V_WaterBarrel",
+        182,
+        8
+      ],
+      [
+        "MOD_N_Skylight_4x4",
+        52,
+        24
+      ],
+      [
+        "MOD_V_AptDoor",
+        46,
+        21
+      ],
+      [
+        "MOD_V_Lantern",
+        46,
+        21
+      ],
+      [
+        "MOD_V_Wall_4x4_AptDoor",
+        44,
+        21
+      ],
+      [
+        "MOD_N_Railing_Glass_4m",
+        34,
+        26
+      ],
+      [
+        "MOD_V_AptInterior",
+        238,
+        3
+      ],
+      [
+        "MOD_V_Floor_4x4",
+        20,
+        35
+      ],
+      [
+        "MOD_V_Wall_4x4_Top",
+        28,
+        24
+      ],
+      [
+        "MOD_V_Wall_4x4_Seam",
+        28,
+        20
+      ],
+      [
+        "MOD_V_SupplyCrate",
+        46,
+        8
+      ],
+      [
+        "MOD_V_Wall_4x4",
+        12,
+        29
+      ]
+    ]
+  },
+  "materials": {
+    "materials": [
+      "M_Bark",
+      "M_Charcoal",
+      "M_Cloth",
+      "M_CyanEmissive",
+      "M_LanternWarm",
+      "M_Moss",
+      "M_NovaGlass",
+      "M_NovaSilver",
+      "M_VeyraConcrete"
+    ],
+    "over_4_slots": [],
+    "procedural_nodes": [],
+    "violet_outside_fx": []
+  },
+  "landmarks": {
+    "LM_AptDoor_L1": [
+      -8.0,
+      11.0,
+      0.0
+    ],
+    "LM_AptDoor_L2": [
+      0.0,
+      11.0,
+      4.0
+    ],
+    "LM_AptDoor_L3": [
+      8.0,
+      11.0,
+      8.0
+    ],
+    "LM_Planter": [
+      0.0,
+      -1.5,
+      0.0
+    ],
+    "LM_Stair_F1": [
+      11.0,
+      -6.3,
+      0.0
+    ],
+    "LM_Stair_Landing": [
+      11.0,
+      0.0,
+      4.0
+    ],
+    "LM_Stair_F2_Top": [
+      11.0,
+      8.5,
+      8.0
+    ],
+    "LM_Entrance_Main": [
+      0.0,
+      -11.0,
+      0.0
+    ],
+    "LM_Entrance_Side": [
+      -15.0,
+      -1.0,
+      0.0
+    ],
+    "LM_Gathering": [
+      0.0,
+      -8.0,
+      0.0
+    ]
+  },
+  "landmark_pair": {
+    "LM_AptDoor_L1": {
+      "this": [
+        -8.0,
+        11.0,
+        0.0
+      ],
+      "pair": [
+        -8.0,
+        11.0,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_AptDoor_L2": {
+      "this": [
+        0.0,
+        11.0,
+        4.0
+      ],
+      "pair": [
+        0.0,
+        11.0,
+        4.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_AptDoor_L3": {
+      "this": [
+        8.0,
+        11.0,
+        8.0
+      ],
+      "pair": [
+        8.0,
+        11.0,
+        8.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Entrance_Main": {
+      "this": [
+        0.0,
+        -11.0,
+        0.0
+      ],
+      "pair": [
+        0.0,
+        -11.0,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Entrance_Side": {
+      "this": [
+        -15.0,
+        -1.0,
+        0.0
+      ],
+      "pair": [
+        -15.0,
+        -1.0,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Planter": {
+      "this": [
+        0.0,
+        -1.5,
+        0.0
+      ],
+      "pair": [
+        0.0,
+        -1.5,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Stair_F1": {
+      "this": [
+        11.0,
+        -6.3,
+        0.0
+      ],
+      "pair": [
+        11.0,
+        -6.3,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Stair_F2_Top": {
+      "this": [
+        11.0,
+        8.5,
+        8.0
+      ],
+      "pair": [
+        11.0,
+        8.5,
+        8.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Stair_Landing": {
+      "this": [
+        11.0,
+        0.0,
+        4.0
+      ],
+      "pair": [
+        11.0,
+        0.0,
+        4.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    }
+  },
+  "landmark_pair_missing_here": [],
+  "landmark_only_here": [
+    "LM_Gathering"
+  ],
+  "landmark_pair_ok": true,
+  "pass": true,
+  "v3_changes": {
+    "banyan": {
+      "tris": 2020,
+      "budget": 20000,
+      "roots": 9,
+      "aerial_drops": 5,
+      "canopy": 10,
+      "trunk_base_diameter": 3.0,
+      "trunk_top_z": 14.2,
+      "balcony_wraps": [
+        "back L2 x=-3",
+        "left L2 y=2",
+        "back L3 x=-6"
+      ]
+    },
+    "habitation": "2 shelter camps (frame + cloth panels + mats + barrel + crates), workstation, 3 supply groups, 15 lanterns, 6 rail drapes, 3 curtained + lit inhabited doors",
+    "clearance_blocked_samples": {
+      "gathering_6m": 0,
+      "gather_to_stair": 0,
+      "gather_to_L1_west": 0,
+      "L1_door_approach": 0,
+      "L2_right_balcony": 0,
+      "L2_back_balcony": 0,
+      "L3_back_balcony": 0
+    }
+  },
+  "rotations_baked": [],
+  "renders": {
+    "topdown": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\V3_detail_topdown.png",
+    "eye": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\V3_detail_eyeheight.png",
+    "hero": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\V3_detail_hero34.png",
+    "gathering": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\V3_detail_gathering.png",
+    "eye_flat_ambient": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\V3_detail_eyeheight_flat.png"
+  },
+  "blend": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\source\\Fractured_V3_SurvivorSanctuary.blend",
+  "export": {
+    "glb_bytes": 604648,
+    "exported_objects": 414,
+    "reimported_objects": 414,
+    "missing_after_reimport": [],
+    "origin_mismatch": [],
+    "colonly_exported": 18,
+    "colonly_reimported": 18,
+    "ok": true
+  },
+  "glb": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\export\\Fractured_V3_SurvivorSanctuary.glb"
+}

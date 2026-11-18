@@ -1,0 +1,573 @@
+{
+  "asset": "V2",
+  "scale_not_applied": [],
+  "negative_scale": [],
+  "rotation_not_applied": [],
+  "instanced_rotations": 98,
+  "geometry_fail_visual": [],
+  "geometry_fail_collision": [],
+  "open_visual_meshes": [
+    "MOD_V_PlatformEdge_4m_A",
+    "MOD_N_Track_4m",
+    "MOD_V_PlatformEdge_4m_B",
+    "MOD_N_DoorFrame_6x5",
+    "MOD_N_DoorFrame_4x4",
+    "MOD_N_PortalFrame_7x5.7",
+    "SM_V2_TunnelStub_E",
+    "SM_V2_TunnelStub_W",
+    "SM_V2_StreetStub",
+    "SM_V2_WestExitStub",
+    "SM_V2_Sign_Street",
+    "SM_V2_Sign_West",
+    "MOD_N_Banner",
+    "MOD_N_ControlDesk",
+    "MOD_V_Bridge_4m_Bent",
+    "MOD_N_Railing_Glass_4m",
+    "MOD_N_Railing_Glass_1m",
+    "MOD_N_Railing_Glass_3m",
+    "SM_Generator",
+    "MOD_N_CoverCrate",
+    "MOD_N_CoverPlanter",
+    "MOD_N_Bench",
+    "MOD_V_Bench_Damaged",
+    "MOD_V_RoofBay_4m_Broken_679",
+    "MOD_V_RoofBay_4m_Broken_5810",
+    "SM_Trench_Water",
+    "MOD_V_VineCard_3.5m",
+    "MOD_V_VineCard_2.5m",
+    "MOD_V_Shelter_Small",
+    "MOD_V_LuggageStack",
+    "MOD_V_Lantern"
+  ],
+  "colonly_suffix_missing": [],
+  "collision_on_decorative": [],
+  "off_grid_modules": [],
+  "seams": {
+    "floor_tiles": 27,
+    "floor_extent": [
+      -18.0,
+      18.0,
+      -10.0,
+      10.0
+    ],
+    "floor_area": 720.0,
+    "floor_extent_area": 720.0,
+    "floor_overlap_m2": 0.0,
+    "floor_gap_m2": -2.6e-05,
+    "wall_rows": 6,
+    "wall_seam_failures": [],
+    "wall_openings": []
+  },
+  "walk": {
+    "samples": 720,
+    "holes": [],
+    "slopes_over_35": [],
+    "ceilings_under_2_5": [],
+    "min_ceiling_m": 3.5,
+    "drops_guarded": 26,
+    "drops_unguarded": [],
+    "drops_designed_hazard": 4
+  },
+  "tris": {
+    "per_collection": {
+      "V2_Export": {
+        "unique": 4710,
+        "instanced": 14476
+      },
+      "V2_Structure": {
+        "unique": 3838,
+        "instanced": 12096
+      },
+      "V2_Water": {
+        "unique": 2,
+        "instanced": 2
+      },
+      "V2_Rubble": {
+        "unique": 232,
+        "instanced": 392
+      },
+      "V2_Roots": {
+        "unique": 426,
+        "instanced": 1002
+      },
+      "V2_Habitation": {
+        "unique": 246,
+        "instanced": 984
+      },
+      "V2_Collision": {
+        "unique": 1790,
+        "instanced": 1790
+      },
+      "V2_FX": {
+        "unique": 0,
+        "instanced": 0
+      }
+    },
+    "export_unique": 4710,
+    "export_instanced": 14476,
+    "budget": 150000,
+    "within_budget": true,
+    "heaviest_meshes": [
+      [
+        "MOD_V_RoofRib",
+        132,
+        10
+      ],
+      [
+        "MOD_N_Track_4m",
+        64,
+        18
+      ],
+      [
+        "MOD_V_Wall_4x4_Seam",
+        60,
+        16
+      ],
+      [
+        "MOD_V_Floor_Platform_4x6_A",
+        68,
+        10
+      ],
+      [
+        "MOD_N_RoofBay_4m",
+        132,
+        5
+      ],
+      [
+        "MOD_V_Root_Straight",
+        48,
+        12
+      ],
+      [
+        "MOD_V_Wall_4x4",
+        28,
+        20
+      ],
+      [
+        "MOD_V_Floor_Platform_4x6_B",
+        68,
+        8
+      ],
+      [
+        "MOD_V_Lantern",
+        46,
+        11
+      ],
+      [
+        "MOD_V_Wall_4x2_Top",
+        28,
+        18
+      ],
+      [
+        "MOD_V_Stair_2m_5rise",
+        220,
+        2
+      ],
+      [
+        "SM_V2_Sign_Street",
+        434,
+        1
+      ]
+    ]
+  },
+  "materials": {
+    "materials": [
+      "M_AmberWarning",
+      "M_Bark",
+      "M_Charcoal",
+      "M_Cloth",
+      "M_CyanEmissive",
+      "M_LanternWarm",
+      "M_Moss",
+      "M_NovaGlass",
+      "M_NovaSilver",
+      "M_VeyraConcrete",
+      "M_Water"
+    ],
+    "over_4_slots": [],
+    "procedural_nodes": [],
+    "violet_outside_fx": []
+  },
+  "landmarks": {
+    "LM_PowerNode_01": [
+      6.0,
+      -8.9,
+      0.0
+    ],
+    "LM_PowerNode_02": [
+      -12.5,
+      9.0,
+      5.0
+    ],
+    "LM_PowerNode_03": [
+      16.0,
+      8.6,
+      0.0
+    ],
+    "LM_Generator": [
+      12.0,
+      9.2,
+      0.0
+    ],
+    "LM_Entrance": [
+      18.0,
+      -7.0,
+      0.0
+    ],
+    "LM_Exit_West": [
+      -18.0,
+      7.0,
+      0.0
+    ],
+    "LM_Platform_R": [
+      0.0,
+      -7.0,
+      0.0
+    ],
+    "LM_Platform_L": [
+      0.0,
+      7.0,
+      0.0
+    ],
+    "LM_ControlRoom": [
+      -4.0,
+      7.5,
+      5.0
+    ],
+    "LM_Bridge_R": [
+      -12.5,
+      -7.0,
+      5.0
+    ],
+    "LM_Bridge_L": [
+      -12.5,
+      5.0,
+      5.0
+    ],
+    "LM_Stair_L": [
+      8.1,
+      9.0,
+      0.0
+    ],
+    "LM_Stair_L_Top": [
+      0.0,
+      9.0,
+      5.0
+    ],
+    "LM_Stair_R": [
+      -2.9,
+      -9.0,
+      0.0
+    ],
+    "LM_Stair_R_Top": [
+      -11.0,
+      -9.0,
+      5.0
+    ],
+    "LM_TrenchRamp_E": [
+      12.1,
+      3.25,
+      0.0
+    ],
+    "LM_TrenchRamp_W": [
+      -12.1,
+      -3.25,
+      0.0
+    ],
+    "LM_RootRamp": [
+      -9.5,
+      -4.6,
+      0.0
+    ],
+    "LM_RootRamp_Top": [
+      -9.5,
+      5.0,
+      5.0
+    ]
+  },
+  "landmark_pair": {
+    "LM_Bridge_L": {
+      "this": [
+        -12.5,
+        5.0,
+        5.0
+      ],
+      "pair": [
+        -12.5,
+        5.0,
+        5.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Bridge_R": {
+      "this": [
+        -12.5,
+        -7.0,
+        5.0
+      ],
+      "pair": [
+        -12.5,
+        -7.0,
+        5.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_ControlRoom": {
+      "this": [
+        -4.0,
+        7.5,
+        5.0
+      ],
+      "pair": [
+        -4.0,
+        7.5,
+        5.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Entrance": {
+      "this": [
+        18.0,
+        -7.0,
+        0.0
+      ],
+      "pair": [
+        18.0,
+        -7.0,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Exit_West": {
+      "this": [
+        -18.0,
+        7.0,
+        0.0
+      ],
+      "pair": [
+        -18.0,
+        7.0,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Generator": {
+      "this": [
+        12.0,
+        9.2,
+        0.0
+      ],
+      "pair": [
+        12.0,
+        9.2,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Platform_L": {
+      "this": [
+        0.0,
+        7.0,
+        0.0
+      ],
+      "pair": [
+        0.0,
+        7.0,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Platform_R": {
+      "this": [
+        0.0,
+        -7.0,
+        0.0
+      ],
+      "pair": [
+        0.0,
+        -7.0,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_PowerNode_01": {
+      "this": [
+        6.0,
+        -8.9,
+        0.0
+      ],
+      "pair": [
+        6.0,
+        -8.9,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_PowerNode_02": {
+      "this": [
+        -12.5,
+        9.0,
+        5.0
+      ],
+      "pair": [
+        -12.5,
+        9.0,
+        5.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_PowerNode_03": {
+      "this": [
+        16.0,
+        8.6,
+        0.0
+      ],
+      "pair": [
+        16.0,
+        8.6,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Stair_L": {
+      "this": [
+        8.1,
+        9.0,
+        0.0
+      ],
+      "pair": [
+        8.1,
+        9.0,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Stair_L_Top": {
+      "this": [
+        0.0,
+        9.0,
+        5.0
+      ],
+      "pair": [
+        0.0,
+        9.0,
+        5.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Stair_R": {
+      "this": [
+        -2.9,
+        -9.0,
+        0.0
+      ],
+      "pair": [
+        -2.9,
+        -9.0,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Stair_R_Top": {
+      "this": [
+        -11.0,
+        -9.0,
+        5.0
+      ],
+      "pair": [
+        -11.0,
+        -9.0,
+        5.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_TrenchRamp_E": {
+      "this": [
+        12.1,
+        3.25,
+        0.0
+      ],
+      "pair": [
+        12.1,
+        3.25,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_TrenchRamp_W": {
+      "this": [
+        -12.1,
+        -3.25,
+        0.0
+      ],
+      "pair": [
+        -12.1,
+        -3.25,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    }
+  },
+  "landmark_pair_missing_here": [],
+  "landmark_only_here": [
+    "LM_RootRamp",
+    "LM_RootRamp_Top"
+  ],
+  "landmark_pair_ok": true,
+  "pass": true,
+  "v2_changes": {
+    "skylight_bays_broken": "4/9 bays, 3 of 6 glass facets missing in each",
+    "habitation": "2 lean-to camps (instanced cluster), 2 blanketed benches, 2 damaged benches, luggage, 10 lanterns"
+  },
+  "ramp": {
+    "x": [
+      -11.0,
+      -8.0
+    ],
+    "y": [
+      -4.6,
+      5.0
+    ],
+    "top": 5.0,
+    "slope_deg": 27.5,
+    "width": 3.0,
+    "flat_top_width": 2.8
+  },
+  "rotations_baked": [],
+  "renders": {
+    "topdown": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\V2_detail_topdown.png",
+    "eye": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\V2_detail_eyeheight.png",
+    "hero": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\V2_detail_hero34.png",
+    "ramp_route": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\V2_detail_ramp_route.png",
+    "eye_flat_ambient": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\V2_detail_eyeheight_flat.png"
+  },
+  "blend": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\source\\Fractured_V2_FloodedTransitStation.blend",
+  "export": {
+    "glb_bytes": 442920,
+    "exported_objects": 292,
+    "reimported_objects": 292,
+    "missing_after_reimport": [],
+    "origin_mismatch": [],
+    "colonly_exported": 32,
+    "colonly_reimported": 32,
+    "ok": true
+  },
+  "glb": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\export\\Fractured_V2_FloodedTransitStation.glb"
+}

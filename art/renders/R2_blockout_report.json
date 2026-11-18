@@ -1,0 +1,154 @@
+{
+  "space": {
+    "x": [
+      -20.0,
+      20.0
+    ],
+    "y": [
+      -8.0,
+      8.0
+    ],
+    "catwalk_z": 0.0,
+    "level_b_z": -4.0,
+    "chasm_floor_z": -24.0,
+    "roof_z": 14.0,
+    "bays": "5 x 8 m"
+  },
+  "primary_route": {
+    "width": 3.0,
+    "entry_catwalks": "x -20..-12",
+    "stair_down": "x -12..-5.7 (z 0 -> -4)",
+    "landing_w": "x -5.7..-4",
+    "breakaway": "x -4..4 at z -4",
+    "landing_e": "x 4..5.7",
+    "stair_up": "x 5.7..12",
+    "exit_catwalks": "x 12..20",
+    "stairs": {
+      "risers": 22,
+      "rise": 0.1818,
+      "tread": 0.3,
+      "run": 6.3,
+      "slope_deg": 31.2
+    }
+  },
+  "root_bridge": {
+    "x": [
+      -12,
+      12
+    ],
+    "y": [
+      2.4,
+      5.6
+    ],
+    "z": 0.0,
+    "deck_width": 3.1999999999999997,
+    "flat_clear_between_strands": 2.54
+  },
+  "turbines": [
+    {
+      "centre": [
+        -8.0,
+        -6.4,
+        -10.0
+      ],
+      "diameter": 8,
+      "axis": "Y"
+    },
+    {
+      "centre": [
+        8.0,
+        -6.4,
+        -10.0
+      ],
+      "diameter": 8,
+      "axis": "Y"
+    }
+  ],
+  "doors": {
+    "from_R1": {
+      "at": [
+        -20.0,
+        0,
+        0
+      ],
+      "w": 4,
+      "h": 4
+    },
+    "to_R3": {
+      "at": [
+        20.0,
+        0,
+        0
+      ],
+      "w": 6,
+      "h": 5
+    }
+  },
+  "kill_volume_top_z": -20.0,
+  "R1_join": "translate R2 so LM_R2_FromR1 meets LM_R1_ToR2: R2 offset = R1 + (32, -3, 0) for a wall-to-wall join (each room also carries its own 4 m door stub).",
+  "landmarks": {
+    "LM_R2_FromR1": [
+      -20.0,
+      0.0,
+      0.0
+    ],
+    "LM_R2_ToR3": [
+      20.0,
+      0.0,
+      0.0
+    ],
+    "LM_R2_StairDown_Top": [
+      -12.0,
+      0.0,
+      0.0
+    ],
+    "LM_R2_StairDown_Foot": [
+      -5.7,
+      0.0,
+      -4.0
+    ],
+    "LM_R2_Breakaway": [
+      0.0,
+      0.0,
+      -4.0
+    ],
+    "LM_R2_StairUp_Foot": [
+      5.7,
+      0.0,
+      -4.0
+    ],
+    "LM_R2_StairUp_Top": [
+      12.0,
+      0.0,
+      0.0
+    ],
+    "LM_R2_RootBridge_W": [
+      -12.0,
+      4.0,
+      0.0
+    ],
+    "LM_R2_RootBridge_E": [
+      12.0,
+      4.0,
+      0.0
+    ],
+    "LM_R2_Turbine_1": [
+      -8.0,
+      -6.4,
+      -10.0
+    ],
+    "LM_R2_Turbine_2": [
+      8.0,
+      -6.4,
+      -10.0
+    ]
+  },
+  "tris_export_unique": 4173,
+  "tris_export_instanced": 9834,
+  "budget": 150000,
+  "renders": {
+    "topdown": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\R2_blockout_topdown.png",
+    "eye": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\R2_blockout_eyeheight.png"
+  },
+  "blend": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\source\\Fractured_R2_TurbineChasm.blend"
+}

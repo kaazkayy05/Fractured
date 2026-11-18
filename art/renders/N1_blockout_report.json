@@ -1,0 +1,111 @@
+{
+  "footprint_interior_m": [
+    28.0,
+    18.0
+  ],
+  "ceiling_m": 12.0,
+  "wall_thickness_m": 0.3,
+  "balcony": {
+    "top_z": 4.5,
+    "y_range": [
+      6.0,
+      9.0
+    ],
+    "depth": 3.0
+  },
+  "stair": {
+    "x_range": [
+      12.0,
+      14.0
+    ],
+    "y_range": [
+      -1.1999999999999993,
+      6.0
+    ],
+    "risers": 25,
+    "rise": 0.18,
+    "tread": 0.3,
+    "slope_deg": 32.0
+  },
+  "main_door": {
+    "centre": [
+      0,
+      -9.0
+    ],
+    "w": 4.0,
+    "h": 4.0
+  },
+  "side_door": {
+    "centre": [
+      14.0,
+      -7.0
+    ],
+    "w": 2.0,
+    "h": 3.0
+  },
+  "vessel": {
+    "plinth_d": 3.5,
+    "plinth_h": 0.6,
+    "glass_d": 3.0,
+    "glass_h": 6.0,
+    "cap_top_z": 7.3999999999999995,
+    "crystal_centre_z": 2.5,
+    "crystal_h": 2.5
+  },
+  "floor_ring": {
+    "radius": 4.5,
+    "width": 0.2,
+    "clear_to_walls_m": 4.4
+  },
+  "landmarks": {
+    "LM_Vessel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "LM_Console_01": [
+      -2.6,
+      -4.503,
+      0.0
+    ],
+    "LM_Console_02": [
+      0.0,
+      -5.2,
+      0.0
+    ],
+    "LM_Console_03": [
+      2.6,
+      -4.503,
+      0.0
+    ],
+    "LM_Exit_Main": [
+      0.0,
+      -9.0,
+      0.0
+    ],
+    "LM_Exit_Side": [
+      14.0,
+      -7.0,
+      0.0
+    ],
+    "LM_BalconyStair": [
+      13.0,
+      -1.2,
+      0.0
+    ],
+    "LM_BalconyStair_Top": [
+      13.0,
+      6.0,
+      4.5
+    ]
+  },
+  "tris_export_unique": 1699,
+  "tris_export_instanced": 4195,
+  "tris_collision": 260,
+  "budget": 120000,
+  "blend": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\source\\Fractured_N1_ResearchFacility.blend",
+  "renders": {
+    "topdown": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\N1_blockout_topdown.png",
+    "eye": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\N1_blockout_eyeheight.png"
+  }
+}

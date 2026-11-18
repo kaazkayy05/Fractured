@@ -1,0 +1,197 @@
+{
+  "footprint_interior_m": [
+    36.0,
+    20.0
+  ],
+  "vault": {
+    "spring_z": 10.0,
+    "apex_z": 14.0,
+    "radius": 14.5
+  },
+  "platforms": {
+    "width": 6.0,
+    "top_z": 0.0,
+    "right_y": [
+      -10.0,
+      -4.0
+    ],
+    "left_y": [
+      4.0,
+      10.0
+    ],
+    "tactile_strip": 0.6
+  },
+  "trench": {
+    "width": 8.0,
+    "floor_z": -1.2,
+    "tracks_y": [
+      -1.6,
+      1.6
+    ],
+    "ramps": "1.5 m wide, 2.1 m run, 29.7 deg"
+  },
+  "control_room": {
+    "x": [
+      -8.0,
+      0.0
+    ],
+    "y": [
+      5.0,
+      10.0
+    ],
+    "floor_z": 5.0,
+    "ceiling_z": 8.5
+  },
+  "bridge": {
+    "x": [
+      -14.0,
+      -11.0
+    ],
+    "y": [
+      -7.0,
+      5.0
+    ],
+    "deck_z": 5.0,
+    "spans": 3,
+    "landing_R": [
+      -14.0,
+      -11.0,
+      -10.0,
+      -7.0
+    ],
+    "landing_L": [
+      -14.0,
+      -11.0,
+      5.0,
+      8.0
+    ]
+  },
+  "stairs": {
+    "width": 2.0,
+    "risers": 28,
+    "rise": 0.1786,
+    "tread": 0.3,
+    "run": 8.1,
+    "slope_deg": 30.8
+  },
+  "street_door": {
+    "w": 6.0,
+    "h": 5.0
+  },
+  "west_exit": {
+    "w": 4.0,
+    "h": 4.0
+  },
+  "sightline_entrance_to_control_room": "49/49 glazing points visible",
+  "lanes_3m": {
+    "R": {
+      "lane_y": [
+        -7.6,
+        -4.6
+      ],
+      "obstacles": []
+    },
+    "L": {
+      "lane_y": [
+        4.6,
+        7.6
+      ],
+      "obstacles": []
+    }
+  },
+  "landmarks": {
+    "LM_PowerNode_01": [
+      6.0,
+      -8.9,
+      0.0
+    ],
+    "LM_PowerNode_02": [
+      -12.5,
+      9.0,
+      5.0
+    ],
+    "LM_PowerNode_03": [
+      16.0,
+      8.6,
+      0.0
+    ],
+    "LM_Generator": [
+      12.0,
+      9.2,
+      0.0
+    ],
+    "LM_Entrance": [
+      18.0,
+      -7.0,
+      0.0
+    ],
+    "LM_Exit_West": [
+      -18.0,
+      7.0,
+      0.0
+    ],
+    "LM_Platform_R": [
+      0.0,
+      -7.0,
+      0.0
+    ],
+    "LM_Platform_L": [
+      0.0,
+      7.0,
+      0.0
+    ],
+    "LM_ControlRoom": [
+      -4.0,
+      7.5,
+      5.0
+    ],
+    "LM_Bridge_R": [
+      -12.5,
+      -7.0,
+      5.0
+    ],
+    "LM_Bridge_L": [
+      -12.5,
+      5.0,
+      5.0
+    ],
+    "LM_Stair_L": [
+      8.1,
+      9.0,
+      0.0
+    ],
+    "LM_Stair_L_Top": [
+      0.0,
+      9.0,
+      5.0
+    ],
+    "LM_Stair_R": [
+      -2.9,
+      -9.0,
+      0.0
+    ],
+    "LM_Stair_R_Top": [
+      -11.0,
+      -9.0,
+      5.0
+    ],
+    "LM_TrenchRamp_E": [
+      12.1,
+      3.25,
+      0.0
+    ],
+    "LM_TrenchRamp_W": [
+      -12.1,
+      -3.25,
+      0.0
+    ]
+  },
+  "tris_export_unique": 1628,
+  "tris_export_instanced": 4356,
+  "budget": 150000,
+  "renders": {
+    "topdown": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\N2_blockout_topdown.png",
+    "eye": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\N2_blockout_eyeheight.png"
+  },
+  "blend": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\source\\Fractured_N2_TransitStation.blend"
+}

@@ -1,0 +1,530 @@
+{
+  "space": {
+    "x": [
+      -20.0,
+      20.0
+    ],
+    "y": [
+      -8.0,
+      8.0
+    ],
+    "catwalk_z": 0.0,
+    "level_b_z": -4.0,
+    "chasm_floor_z": -24.0,
+    "roof_z": 14.0,
+    "bays": "5 x 8 m"
+  },
+  "primary_route": {
+    "width": 3.0,
+    "entry_catwalks": "x -20..-12",
+    "stair_down": "x -12..-5.7 (z 0 -> -4)",
+    "landing_w": "x -5.7..-4",
+    "breakaway": "x -4..4 at z -4",
+    "landing_e": "x 4..5.7",
+    "stair_up": "x 5.7..12",
+    "exit_catwalks": "x 12..20",
+    "stairs": {
+      "risers": 22,
+      "rise": 0.1818,
+      "tread": 0.3,
+      "run": 6.3,
+      "slope_deg": 31.2
+    }
+  },
+  "root_bridge": {
+    "x": [
+      -12,
+      12
+    ],
+    "y": [
+      2.4,
+      5.6
+    ],
+    "z": 0.0,
+    "deck_width": 3.1999999999999997,
+    "flat_clear_between_strands": 2.54
+  },
+  "turbines": [
+    {
+      "centre": [
+        -8.0,
+        -6.4,
+        -10.0
+      ],
+      "diameter": 8,
+      "axis": "Y"
+    },
+    {
+      "centre": [
+        8.0,
+        -6.4,
+        -10.0
+      ],
+      "diameter": 8,
+      "axis": "Y"
+    }
+  ],
+  "doors": {
+    "from_R1": {
+      "at": [
+        -20.0,
+        0,
+        0
+      ],
+      "w": 4,
+      "h": 4
+    },
+    "to_R3": {
+      "at": [
+        20.0,
+        0,
+        0
+      ],
+      "w": 6,
+      "h": 5
+    }
+  },
+  "kill_volume_top_z": -20.0,
+  "R1_join": "translate R2 so LM_R2_FromR1 meets LM_R1_ToR2: R2 offset = R1 + (32, -3, 0) for a wall-to-wall join (each room also carries its own 4 m door stub).",
+  "landmarks": {
+    "LM_R2_FromR1": [
+      -20.0,
+      0.0,
+      0.0
+    ],
+    "LM_R2_ToR3": [
+      20.0,
+      0.0,
+      0.0
+    ],
+    "LM_R2_StairDown_Top": [
+      -12.0,
+      0.0,
+      0.0
+    ],
+    "LM_R2_StairDown_Foot": [
+      -5.7,
+      0.0,
+      -4.0
+    ],
+    "LM_R2_Breakaway": [
+      0.0,
+      0.0,
+      -4.0
+    ],
+    "LM_R2_StairUp_Foot": [
+      5.7,
+      0.0,
+      -4.0
+    ],
+    "LM_R2_StairUp_Top": [
+      12.0,
+      0.0,
+      0.0
+    ],
+    "LM_R2_RootBridge_W": [
+      -12.0,
+      4.0,
+      0.0
+    ],
+    "LM_R2_RootBridge_E": [
+      12.0,
+      4.0,
+      0.0
+    ],
+    "LM_R2_Turbine_1": [
+      -8.0,
+      -6.4,
+      -10.0
+    ],
+    "LM_R2_Turbine_2": [
+      8.0,
+      -6.4,
+      -10.0
+    ]
+  },
+  "tris_export_unique": 4621,
+  "tris_export_instanced": 10522,
+  "budget": 150000,
+  "renders": {
+    "topdown": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\R2_detail_topdown.png",
+    "eye": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\R2_detail_eyeheight.png",
+    "hero": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\R2_detail_hero34.png",
+    "breakaway_broken": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\R2_detail_breakaway_broken.png",
+    "eye_flat_ambient": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\R2_detail_eyeheight_flat.png"
+  },
+  "qa": {
+    "asset": "R2",
+    "scale_not_applied": [],
+    "negative_scale": [],
+    "rotation_not_applied": [],
+    "instanced_rotations": 12,
+    "geometry_fail_visual": [],
+    "geometry_fail_collision": [],
+    "open_visual_meshes": [
+      "MOD_R_Catwalk_4m",
+      "MOD_R_Catwalk_4m_OpenN",
+      "MOD_R_StairLanding",
+      "MOD_R_BlastDoor_Frame",
+      "MOD_R_BlastDoor_Frame_6x5",
+      "SM_R2_DoorStubs",
+      "MOD_V_VineCard_4.5m",
+      "MOD_V_VineCard_3m",
+      "SM_Moss_Patch_01"
+    ],
+    "colonly_suffix_missing": [],
+    "collision_on_decorative": [],
+    "off_grid_modules": [],
+    "seams": {
+      "floor_tiles": 0,
+      "wall_rows": 0,
+      "wall_seam_failures": [],
+      "wall_openings": []
+    },
+    "walk": {
+      "samples": 640,
+      "holes": [],
+      "slopes_over_35": [],
+      "ceilings_under_2_5": [],
+      "min_ceiling_m": 14.0,
+      "drops_guarded": 0,
+      "drops_unguarded": [],
+      "drops_designed_hazard": 0,
+      "edges_to_void_guarded": 140,
+      "edges_to_void_open": []
+    },
+    "tris": {
+      "per_collection": {
+        "R2_Export": {
+          "unique": 4621,
+          "instanced": 10522
+        },
+        "R2_Breakaway": {
+          "unique": 964,
+          "instanced": 964
+        },
+        "R2_RootBridge": {
+          "unique": 540,
+          "instanced": 540
+        },
+        "R2_Collision": {
+          "unique": 1072,
+          "instanced": 1072
+        },
+        "R2_FX": {
+          "unique": 0,
+          "instanced": 0
+        }
+      },
+      "export_unique": 4621,
+      "export_instanced": 10522,
+      "budget": 150000,
+      "within_budget": true,
+      "heaviest_meshes": [
+        [
+          "MOD_R_ChasmBay",
+          492,
+          10
+        ],
+        [
+          "MOD_R_TurbineHousing",
+          352,
+          2
+        ],
+        [
+          "SM_R2_RootBridge_Roots",
+          464,
+          1
+        ],
+        [
+          "MOD_R_Catwalk_4m",
+          206,
+          2
+        ],
+        [
+          "MOD_R_StairLanding",
+          172,
+          2
+        ],
+        [
+          "MOD_R_Stair_3m_4drop",
+          172,
+          2
+        ],
+        [
+          "SM_BreakawayBridge_Intact",
+          300,
+          1
+        ],
+        [
+          "MOD_R_Catwalk_4m_OpenN",
+          146,
+          2
+        ],
+        [
+          "MOD_R_TurbineRotor",
+          136,
+          2
+        ],
+        [
+          "MOD_R_BlastDoor_Frame_6x5",
+          262,
+          1
+        ],
+        [
+          "MOD_R_BlastDoor_Frame",
+          196,
+          1
+        ],
+        [
+          "SM_R2_Junction_W",
+          180,
+          1
+        ]
+      ]
+    },
+    "materials": {
+      "materials": [
+        "M_AmberWarning",
+        "M_Bark",
+        "M_Charcoal",
+        "M_CyanEmissive",
+        "M_Moss",
+        "M_NovaSilver"
+      ],
+      "over_4_slots": [],
+      "procedural_nodes": [],
+      "violet_outside_fx": []
+    },
+    "landmarks": {
+      "LM_R2_FromR1": [
+        -20.0,
+        0.0,
+        0.0
+      ],
+      "LM_R2_ToR3": [
+        20.0,
+        0.0,
+        0.0
+      ],
+      "LM_R2_StairDown_Top": [
+        -12.0,
+        0.0,
+        0.0
+      ],
+      "LM_R2_StairDown_Foot": [
+        -5.7,
+        0.0,
+        -4.0
+      ],
+      "LM_R2_Breakaway": [
+        0.0,
+        0.0,
+        -4.0
+      ],
+      "LM_R2_StairUp_Foot": [
+        5.7,
+        0.0,
+        -4.0
+      ],
+      "LM_R2_StairUp_Top": [
+        12.0,
+        0.0,
+        0.0
+      ],
+      "LM_R2_RootBridge_W": [
+        -12.0,
+        4.0,
+        0.0
+      ],
+      "LM_R2_RootBridge_E": [
+        12.0,
+        4.0,
+        0.0
+      ],
+      "LM_R2_Turbine_1": [
+        -8.0,
+        -6.4,
+        -10.0
+      ],
+      "LM_R2_Turbine_2": [
+        8.0,
+        -6.4,
+        -10.0
+      ]
+    },
+    "landmark_pair": {
+      "LM_R2_Breakaway": {
+        "this": [
+          0.0,
+          0.0,
+          -4.0
+        ],
+        "pair": [
+          0.0,
+          0.0,
+          -4.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_R2_FromR1": {
+        "this": [
+          -20.0,
+          0.0,
+          0.0
+        ],
+        "pair": [
+          -20.0,
+          0.0,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_R2_RootBridge_E": {
+        "this": [
+          12.0,
+          4.0,
+          0.0
+        ],
+        "pair": [
+          12.0,
+          4.0,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_R2_RootBridge_W": {
+        "this": [
+          -12.0,
+          4.0,
+          0.0
+        ],
+        "pair": [
+          -12.0,
+          4.0,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_R2_StairDown_Foot": {
+        "this": [
+          -5.7,
+          0.0,
+          -4.0
+        ],
+        "pair": [
+          -5.7,
+          0.0,
+          -4.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_R2_StairDown_Top": {
+        "this": [
+          -12.0,
+          0.0,
+          0.0
+        ],
+        "pair": [
+          -12.0,
+          0.0,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_R2_StairUp_Foot": {
+        "this": [
+          5.7,
+          0.0,
+          -4.0
+        ],
+        "pair": [
+          5.7,
+          0.0,
+          -4.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_R2_StairUp_Top": {
+        "this": [
+          12.0,
+          0.0,
+          0.0
+        ],
+        "pair": [
+          12.0,
+          0.0,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_R2_ToR3": {
+        "this": [
+          20.0,
+          0.0,
+          0.0
+        ],
+        "pair": [
+          20.0,
+          0.0,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_R2_Turbine_1": {
+        "this": [
+          -8.0,
+          -6.4,
+          -10.0
+        ],
+        "pair": [
+          -8.0,
+          -6.4,
+          -10.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_R2_Turbine_2": {
+        "this": [
+          8.0,
+          -6.4,
+          -10.0
+        ],
+        "pair": [
+          8.0,
+          -6.4,
+          -10.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      }
+    },
+    "landmark_pair_missing_here": [],
+    "landmark_only_here": [],
+    "landmark_pair_ok": true,
+    "pass": true,
+    "export": {
+      "glb_bytes": 322152,
+      "exported_objects": 80,
+      "reimported_objects": 80,
+      "missing_after_reimport": [],
+      "origin_mismatch": [],
+      "colonly_exported": 12,
+      "colonly_reimported": 12,
+      "ok": true
+    }
+  },
+  "rotations_baked": [],
+  "blend": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\source\\Fractured_R2_TurbineChasm.blend",
+  "glb": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\export\\Fractured_R2_TurbineChasm.glb"
+}
