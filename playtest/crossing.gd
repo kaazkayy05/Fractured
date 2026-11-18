@@ -1,6 +1,6 @@
 extends Node3D
 
-const FILES = ["res://worlds/nova.glb", "res://worlds/veyra.glb"]
+const FILES = ["worlds/nova.glb", "worlds/veyra.glb"]
 const NAMES = ["NOVA", "VEYRA"]
 const TITLES = ["Inspect the station crystal", "Reach the east entrance", "Follow the avenue to the fracture", "Recover the echo on the promenade", "Return to the fracture"]
 const POINTS = [Vector3(-161.28,6,229.42),Vector3(-135.5,6,251.42),Vector3(-104,4.5,251.42),Vector3(-78,6,352),Vector3(-104,4.5,251.42)]
@@ -15,10 +15,22 @@ var timeline := 0
 var stage := 0
 var elapsed := 0.0
 var safe_position := Vector3(-157.28,6.1,257.42)
+var instability := preload("instability.gd").new()
+var enemy_script := preload("reality_enemy.gd")
+var structure_script := preload("unstable_structure.gd")
+var district: StringName = &"canal"
+var enemies: Array[CharacterBody3D] = []
+var stabilizers: Array[MeshInstance3D] = []
+var distortion := ColorRect.new()
+var enemy_spawned := false
+var unstable_structure: StaticBody3D
 
 func _ready():
+ add_child(instability)
+ instability.register_district(district)
+ instability.changed.connect(_on_instability_changed)
  for path in FILES:
-  var city := (load(path) as PackedScene).instantiate() as Node3D
+  var city := (load(get_script().resource_path.get_base_dir().path_join(path)) as PackedScene).instantiate() as Node3D
   add_child(city)
   worlds.append(city)
   var body := StaticBody3D.new()
@@ -59,6 +71,7 @@ func _ready():
  camera.position.y=1.68
  camera.far=3800
  player.position=safe_position
+ player.set_meta("health", 100)
  var orb := SphereMesh.new()
  orb.radius=0.34
  orb.height=0.68
@@ -78,19 +91,40 @@ func _ready():
  var canvas := CanvasLayer.new()
  add_child(canvas)
  canvas.add_child(hud)
+ canvas.add_child(distortion)
+ distortion.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+ distortion.color=Color(0.55,0.15,0.75,0)
+ distortion.mouse_filter=Control.MOUSE_FILTER_IGNORE
  hud.position=Vector2(18,15)
  hud.add_theme_font_size_override("font_size",19)
  hud.add_theme_constant_override("outline_size",6)
  add_promenade_link()
  switch_world(0)
+ spawn_enemy(0,Vector3(-173,6,231))
+ spawn_enemy(1,Vector3(-115,4.6,274))
+ add_stabilizer(Vector3(-148,6,220))
+ unstable_structure = structure_script.new()
+ unstable_structure.position=Vector3(-113,4.6,274)
+ unstable_structure.destroyed.connect(report_structure_destroyed)
+ add_child(unstable_structure)
+ for enemy in enemies:enemy.set("unstable_structure",unstable_structure)
  update_target()
  Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
 
 func switch_world(index:int):
+ if worlds.size()==2 and index != timeline:
+  instability.reality_shift(district)
  timeline=index
  for i in worlds.size():
   worlds[i].visible=(i==index)
   bodies[i].collision_layer=1 if i==index else 0
+ for enemy in enemies:
+  if is_instance_valid(enemy):
+   enemy.visible=int(enemy.get_meta("reality"))==index
+   enemy.process_mode=Node.PROCESS_MODE_INHERIT if enemy.visible else Node.PROCESS_MODE_DISABLED
+   enemy.collision_layer=1 if enemy.visible else 0
+   enemy.call("configure",index,instability.value(district))
+ _on_instability_changed(district,instability.value(district))
 
 func update_target():
  if stage<POINTS.size():
@@ -115,6 +149,10 @@ func _unhandled_input(event):
    KEY_SPACE:
     if player.is_on_floor(): player.velocity.y=6
    KEY_E:
+    for stabilizer in stabilizers:
+     if is_instance_valid(stabilizer) and player.position.distance_to(stabilizer.position)<3:
+      instability.activate_stabilizer(district)
+      return
     if stage<POINTS.size() and player.position.distance_to(POINTS[stage])<6:
      if stage==2: switch_world(1)
      if stage==4: switch_world(0)
@@ -141,12 +179,16 @@ func _physics_process(dt):
  if player.position.y < -10:
   player.position=safe_position
   player.velocity=Vector3.ZERO
+ if int(player.get_meta("health")) <= 0:
+  player.position=safe_position
+  player.velocity=Vector3.ZERO
+  player.set_meta("health",100)
  if stage<POINTS.size():
   var dist:=player.position.distance_to(POINTS[stage])
   marker.text="◇   %d m" % roundi(dist)
-  hud.text="%s   /   CANAL CROSSING     %d / 5\n%s%s\nWASD move    Mouse look    Shift sprint    Space jump    R recover    Esc cursor" % [NAMES[timeline],stage+1,TITLES[stage],"   [E]" if dist<6 else "   ·   Follow the diamond"]
+  hud.text="%s   /   CANAL CROSSING     %d / 5   HP %d   INSTABILITY %d/100\n%s%s\nWASD move    Mouse look    Shift sprint    Space jump    E interact    R recover" % [NAMES[timeline],stage+1,int(player.get_meta("health")),instability.value(district),TITLES[stage],"   [E]" if dist<6 else "   ·   Follow the diamond"]
  else:
-  hud.text="ECHO RECOVERED    /    %d:%02d\nExplore Nova, or press Enter to replay." % [int(elapsed)/60,int(elapsed)%60]
+  hud.text="ECHO RECOVERED    /    %d:%02d\nExplore Nova, or press Enter to replay." % [floori(elapsed/60.0),int(elapsed)%60]
 
 func add_promenade_link():
  # Join the avenue at y=4.5 to the raised waterfront paving at y=6.
@@ -167,3 +209,50 @@ func add_promenade_link():
  var collider := CollisionShape3D.new()
  collider.shape=shape
  link.add_child(collider)
+
+func spawn_enemy(reality_id:int, location:Vector3) -> void:
+ var enemy = enemy_script.new()
+ enemy.set_meta("reality",reality_id)
+ enemy.position=location
+ enemy.set("player",player)
+ if is_instance_valid(unstable_structure):enemy.set("unstable_structure",unstable_structure)
+ enemy.call("configure",reality_id,instability.value(district))
+ add_child(enemy)
+ enemies.append(enemy)
+ enemy.visible=reality_id==timeline
+ enemy.process_mode=Node.PROCESS_MODE_INHERIT if enemy.visible else Node.PROCESS_MODE_DISABLED
+ enemy.collision_layer=1 if enemy.visible else 0
+
+func add_stabilizer(location:Vector3) -> void:
+ var mesh:=MeshInstance3D.new()
+ var shape:=CylinderMesh.new()
+ shape.top_radius=0.6
+ shape.bottom_radius=0.8
+ shape.height=2.0
+ mesh.mesh=shape
+ mesh.position=location+Vector3.UP
+ var mat:=StandardMaterial3D.new()
+ mat.albedo_color=Color("#6fd5c9")
+ mesh.material_override=mat
+ add_child(mesh)
+ stabilizers.append(mesh)
+
+func report_structure_destroyed(event_id:StringName,severity:int=15) -> void:
+ instability.structural_destruction(district,event_id,severity)
+
+func _on_instability_changed(id:StringName,value:int) -> void:
+ if id!=district:return
+ for enemy in enemies:
+  if is_instance_valid(enemy):enemy.call("configure",timeline,value)
+ if value>=90:distortion.color=Color(0.7,0.1,0.8,0.25)
+ if value<90:distortion.color=Color(0.55,0.15,0.75,0.0 if value<30 else minf(0.18,0.03+float(value-30)*0.002))
+ for i in worlds.size():worlds[i].visible=(i==timeline or value>=90)
+ if value>=60 and not enemy_spawned:
+  spawn_enemy(0,Vector3(-155,6,213))
+  spawn_enemy(1,Vector3(-107,4.6,258))
+  enemy_spawned=true
+ if value<60 and enemy_spawned:
+  for enemy in enemies.slice(2):
+   if is_instance_valid(enemy):enemy.queue_free()
+  enemies.resize(2)
+  enemy_spawned=false

@@ -1,0 +1,56 @@
+extends Node
+
+func _ready() -> void:
+ call_deferred("check")
+
+func check() -> void:
+ var state = load("res://playtest/instability.gd").new()
+ get_tree().root.add_child.call_deferred(state)
+ var canal: StringName = &"canal"
+ var plaza: StringName = &"plaza"
+ assert(state.value(canal) == 0)
+ for i in 6: state.reality_shift(canal)
+ assert(state.value(canal) == 30 and state.tier(canal) == 1)
+ assert(state.value(plaza) == 0)
+ assert(state.structural_destruction(canal, &"wall_a", 20))
+ assert(not state.structural_destruction(canal, &"wall_a", 20))
+ assert(state.value(canal) == 50)
+ assert(state.structural_destruction(canal, &"wall_b", 20))
+ assert(state.tier(canal) == 2)
+ state.add(canal, 100)
+ assert(state.value(canal) == 100 and state.tier(canal) == 3)
+ assert(state.activate_stabilizer(canal))
+ assert(state.activate_stabilizer(canal))
+ assert(not state.activate_stabilizer(canal))
+ assert(state.value(canal) == 40 and state.tier(canal) == 1)
+ state.add(canal, -100)
+ assert(state.value(canal) == 0 and state.tier(canal) == 0)
+ var enemy = load("res://playtest/reality_enemy.gd").new()
+ enemy.max_health = 75
+ get_tree().root.add_child.call_deferred(enemy)
+ await get_tree().process_frame
+ enemy.configure(1, 75)
+ assert(enemy.health == 75 and enemy.reality == 1 and enemy.instability == 75)
+ enemy.configure(0, 20)
+ assert(enemy.reality == 0 and enemy.instability == 20)
+ enemy.take_damage(30)
+ assert(enemy.health == 45)
+ var game = load("res://playtest/Crossing.tscn").instantiate()
+ get_tree().root.add_child.call_deferred(game)
+ await get_tree().process_frame
+ assert(game.worlds.size() == 2)
+ game.switch_world(1)
+ assert(game.instability.value(&"canal") == 5)
+ game.instability.add(&"canal", 25)
+ assert(game.distortion.color.a > 0.0)
+ game.instability.add(&"canal", 30)
+ assert(game.enemy_spawned and game.enemies.size() == 4)
+ game.instability.add(&"canal", 30)
+ assert(game.worlds[0].visible and game.worlds[1].visible)
+ assert(game.instability.activate_stabilizer(&"canal"))
+ assert(not game.worlds[0].visible and game.worlds[1].visible)
+ game.report_structure_destroyed(&"test_wall", 20)
+ game.report_structure_destroyed(&"test_wall", 20)
+ assert(game.instability.value(&"canal") == 80)
+ print("PASS instability thresholds, district isolation, deduplication, stabilizer limits, enemy state and health")
+ get_tree().quit()

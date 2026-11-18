@@ -8,7 +8,7 @@ path="res://.godot/imported/nova.glb-f19340087aa3871449c04cd262737eec.scn"
 
 [deps]
 
-source_file="res://worlds/nova.glb"
+source_file="res://playtest/worlds/nova.glb"
 dest_files=["res://.godot/imported/nova.glb-f19340087aa3871449c04cd262737eec.scn"]
 
 [params]
@@ -43,3 +43,4 @@ _subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
 gltf/texture_map_mode=1
+
