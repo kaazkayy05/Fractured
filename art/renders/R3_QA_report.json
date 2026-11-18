@@ -1,0 +1,514 @@
+{
+  "arena": {
+    "diameter": 30.0,
+    "ceiling": 18.0,
+    "wall_segments": 32
+  },
+  "core": {
+    "base_diameter": 6.0,
+    "rings": 4,
+    "ring_rotation": "local Z, alternating",
+    "column_to": 18.0,
+    "collision": "12-sided cylinder r=3 to the ceiling (not climbable)"
+  },
+  "circulation_ring": {
+    "r": [
+      3.0,
+      7.0
+    ],
+    "width": 4.0,
+    "blocked_samples": "0/5006 (0 = unobstructed)"
+  },
+  "nodes": {
+    "A": {
+      "angle": 90.0,
+      "centre": [
+        0.0,
+        7.6
+      ],
+      "inner_face_r": 7.0,
+      "height": 2.5,
+      "glyph": "triangle"
+    },
+    "B": {
+      "angle": 210.0,
+      "centre": [
+        -6.582,
+        -3.8
+      ],
+      "inner_face_r": 7.0,
+      "height": 2.5,
+      "glyph": "trefoil"
+    },
+    "C": {
+      "angle": 330.0,
+      "centre": [
+        6.582,
+        -3.8
+      ],
+      "inner_face_r": 7.0,
+      "height": 2.5,
+      "glyph": "diamond"
+    }
+  },
+  "cover": [
+    {
+      "angle": 30,
+      "r": 11.0,
+      "h": 1.1
+    },
+    {
+      "angle": 60,
+      "r": 11.0,
+      "h": 1.4
+    },
+    {
+      "angle": 120,
+      "r": 11.0,
+      "h": 1.25
+    },
+    {
+      "angle": 150,
+      "r": 11.0,
+      "h": 1.1
+    },
+    {
+      "angle": 240,
+      "r": 11.0,
+      "h": 1.4
+    },
+    {
+      "angle": 270,
+      "r": 11.0,
+      "h": 1.25
+    },
+    {
+      "angle": 300,
+      "r": 11.0,
+      "h": 1.1
+    }
+  ],
+  "entrances": {
+    "A_from_R2": [
+      -13.858192987669302,
+      0,
+      0
+    ],
+    "B_alt": [
+      13.858192987669302,
+      0,
+      0
+    ],
+    "w": 6.0,
+    "h": 5.0
+  },
+  "damage": {
+    "broken_wall_segments": [
+      8,
+      19
+    ],
+    "fallen_beam_angle": 103.0
+  },
+  "violet": {
+    "material": "M_FX_Violet (R3_FX only)",
+    "fx_tris": 210,
+    "used_outside_fx": []
+  },
+  "R2_join": "translate R3 so LM_R3_FromR2 meets LM_R2_ToR3 (6 x 5 openings on both sides).",
+  "landmarks": {
+    "LM_R3_Node_A": [
+      0.0,
+      7.6,
+      0.0
+    ],
+    "LM_R3_Node_B": [
+      -6.582,
+      -3.8,
+      0.0
+    ],
+    "LM_R3_Node_C": [
+      6.582,
+      -3.8,
+      0.0
+    ],
+    "LM_R3_FractureFX": [
+      -0.585,
+      -4.159,
+      0.0
+    ],
+    "LM_R3_Core": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "LM_R3_FromR2": [
+      -13.858,
+      0.0,
+      0.0
+    ],
+    "LM_R3_ApproachB": [
+      13.858,
+      0.0,
+      0.0
+    ]
+  },
+  "tris_export_unique": 3425,
+  "tris_export_instanced": 5195,
+  "budget": 140000,
+  "renders": {
+    "topdown": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\R3_detail_topdown.png",
+    "eye": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\R3_detail_eyeheight.png",
+    "hero": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\R3_detail_hero34.png",
+    "eye_flat_ambient": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\R3_detail_eyeheight_flat.png"
+  },
+  "qa": {
+    "asset": "R3",
+    "scale_not_applied": [],
+    "negative_scale": [],
+    "rotation_not_applied": [],
+    "instanced_rotations": 56,
+    "geometry_fail_visual": [],
+    "geometry_fail_collision": [],
+    "open_visual_meshes": [
+      "SM_R3_FloorInlays",
+      "MOD_R_ArenaWall_Broken",
+      "MOD_V_VineCard_4.5m",
+      "MOD_V_VineCard_3m",
+      "MOD_R_BlastDoor_Frame_6x5",
+      "SM_R3_ApproachStubs",
+      "MOD_R_CoverBlock_110",
+      "MOD_R_CoverBlock_140",
+      "MOD_R_CoverBlock_125",
+      "SM_ConvergenceNode_A_Glyph",
+      "SM_ConvergenceNode_B_Glyph",
+      "SM_ConvergenceNode_C_Glyph"
+    ],
+    "colonly_suffix_missing": [],
+    "collision_on_decorative": [],
+    "off_grid_modules": [],
+    "seams": {
+      "floor_tiles": 0,
+      "wall_rows": 0,
+      "wall_seam_failures": [],
+      "wall_openings": []
+    },
+    "walk": {
+      "samples": 900,
+      "holes": [],
+      "slopes_over_35": [],
+      "ceilings_under_2_5": [],
+      "min_ceiling_m": 2.536,
+      "drops_guarded": 0,
+      "drops_unguarded": [],
+      "drops_designed_hazard": 0,
+      "edges_to_void_guarded": 109,
+      "edges_to_void_open": [
+        {
+          "at": [
+            -3.46,
+            12.54,
+            0.0
+          ],
+          "toward": [
+            1,
+            0
+          ]
+        },
+        {
+          "at": [
+            -2.46,
+            11.54,
+            0.0
+          ],
+          "toward": [
+            0,
+            1
+          ]
+        },
+        {
+          "at": [
+            -2.46,
+            13.54,
+            0.0
+          ],
+          "toward": [
+            0,
+            -1
+          ]
+        },
+        {
+          "at": [
+            -1.46,
+            11.54,
+            0.0
+          ],
+          "toward": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "tris": {
+      "per_collection": {
+        "R3_Export": {
+          "unique": 3425,
+          "instanced": 5195
+        },
+        "R3_Core": {
+          "unique": 584,
+          "instanced": 584
+        },
+        "R3_Nodes": {
+          "unique": 71,
+          "instanced": 119
+        },
+        "R3_Collision": {
+          "unique": 884,
+          "instanced": 884
+        },
+        "R3_FX": {
+          "unique": 210,
+          "instanced": 210
+        }
+      },
+      "export_unique": 3425,
+      "export_instanced": 5195,
+      "budget": 140000,
+      "within_budget": true,
+      "heaviest_meshes": [
+        [
+          "SM_R3_FloorInlays",
+          1152,
+          1
+        ],
+        [
+          "MOD_R_ArenaWall",
+          44,
+          22
+        ],
+        [
+          "MOD_R_BlastDoor_Frame_6x5",
+          262,
+          2
+        ],
+        [
+          "MOD_R_ArenaWall_Broken",
+          130,
+          2
+        ],
+        [
+          "SM_R3_Ceiling",
+          256,
+          1
+        ],
+        [
+          "SM_R3_CoreDangerBand",
+          240,
+          1
+        ],
+        [
+          "SM_Rubble_Cluster",
+          120,
+          2
+        ],
+        [
+          "SM_R3_CeilingRibs",
+          192,
+          1
+        ],
+        [
+          "SM_R3_Floor",
+          128,
+          1
+        ],
+        [
+          "MOD_R_ArenaButtress",
+          12,
+          10
+        ],
+        [
+          "MOD_R_CoverBlock_110",
+          34,
+          3
+        ],
+        [
+          "SM_CoreRing_01",
+          96,
+          1
+        ]
+      ]
+    },
+    "materials": {
+      "materials": [
+        "M_AmberWarning",
+        "M_Charcoal",
+        "M_CyanEmissive",
+        "M_Moss",
+        "M_NovaGlass",
+        "M_NovaSilver",
+        "M_VeyraConcrete"
+      ],
+      "over_4_slots": [],
+      "procedural_nodes": [],
+      "violet_outside_fx": []
+    },
+    "landmarks": {
+      "LM_R3_Node_A": [
+        0.0,
+        7.6,
+        0.0
+      ],
+      "LM_R3_Node_B": [
+        -6.5818,
+        -3.8,
+        0.0
+      ],
+      "LM_R3_Node_C": [
+        6.5818,
+        -3.8,
+        0.0
+      ],
+      "LM_R3_FractureFX": [
+        -0.5845,
+        -4.1591,
+        0.0
+      ],
+      "LM_R3_Core": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "LM_R3_FromR2": [
+        -13.8582,
+        0.0,
+        0.0
+      ],
+      "LM_R3_ApproachB": [
+        13.8582,
+        0.0,
+        0.0
+      ]
+    },
+    "landmark_pair": {
+      "LM_R3_ApproachB": {
+        "this": [
+          13.8582,
+          0.0,
+          0.0
+        ],
+        "pair": [
+          13.858,
+          0.0,
+          0.0
+        ],
+        "delta_m": 0.0002,
+        "ok": true
+      },
+      "LM_R3_Core": {
+        "this": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "pair": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_R3_FractureFX": {
+        "this": [
+          -0.5845,
+          -4.1591,
+          0.0
+        ],
+        "pair": [
+          -0.585,
+          -4.159,
+          0.0
+        ],
+        "delta_m": 0.0005,
+        "ok": true
+      },
+      "LM_R3_FromR2": {
+        "this": [
+          -13.8582,
+          0.0,
+          0.0
+        ],
+        "pair": [
+          -13.858,
+          0.0,
+          0.0
+        ],
+        "delta_m": 0.0002,
+        "ok": true
+      },
+      "LM_R3_Node_A": {
+        "this": [
+          0.0,
+          7.6,
+          0.0
+        ],
+        "pair": [
+          0.0,
+          7.6,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_R3_Node_B": {
+        "this": [
+          -6.5818,
+          -3.8,
+          0.0
+        ],
+        "pair": [
+          -6.582,
+          -3.8,
+          0.0
+        ],
+        "delta_m": 0.0002,
+        "ok": true
+      },
+      "LM_R3_Node_C": {
+        "this": [
+          6.5818,
+          -3.8,
+          0.0
+        ],
+        "pair": [
+          6.582,
+          -3.8,
+          0.0
+        ],
+        "delta_m": 0.0002,
+        "ok": true
+      }
+    },
+    "landmark_pair_missing_here": [],
+    "landmark_only_here": [],
+    "landmark_pair_ok": true,
+    "pass": true,
+    "export": {
+      "glb_bytes": 247592,
+      "exported_objects": 84,
+      "reimported_objects": 84,
+      "missing_after_reimport": [],
+      "origin_mismatch": [],
+      "colonly_exported": 8,
+      "colonly_reimported": 8,
+      "ok": true
+    }
+  },
+  "rotations_baked": [
+    "SM_R3_FallenBeam"
+  ],
+  "blend": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\source\\Fractured_R3_ConvergenceChamber.blend",
+  "glb_fx": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\export\\Fractured_R3_ConvergenceChamber_FX.glb",
+  "glb": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\export\\Fractured_R3_ConvergenceChamber.glb"
+}

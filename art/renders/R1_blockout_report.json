@@ -1,0 +1,174 @@
+{
+  "plan": {
+    "footprint": [
+      24.0,
+      18.0
+    ],
+    "chamfer": 3.0,
+    "ceiling": 8.0,
+    "octagon": [
+      [
+        -9.0,
+        -9.0
+      ],
+      [
+        9.0,
+        -9.0
+      ],
+      [
+        12.0,
+        -6.0
+      ],
+      [
+        12.0,
+        6.0
+      ],
+      [
+        9.0,
+        9.0
+      ],
+      [
+        -9.0,
+        9.0
+      ],
+      [
+        -12.0,
+        6.0
+      ],
+      [
+        -12.0,
+        -6.0
+      ]
+    ]
+  },
+  "front_zone": {
+    "y": [
+      -9.0,
+      0.0
+    ],
+    "z": 0.0
+  },
+  "tiers": [
+    {
+      "y": [
+        0.0,
+        3.0
+      ],
+      "z": 0.5
+    },
+    {
+      "y": [
+        3.0,
+        6.0
+      ],
+      "z": 1.0
+    },
+    {
+      "y": [
+        6.0,
+        9.0
+      ],
+      "z": 1.5
+    }
+  ],
+  "aisle": {
+    "width": 3.0,
+    "steps_per_tier": 3,
+    "rise": 0.1667,
+    "tread": 0.3
+  },
+  "doors": {
+    "entry": [
+      -12.0,
+      -3.0,
+      0.0
+    ],
+    "to_R2": [
+      12.0,
+      -3.0,
+      0.0
+    ],
+    "w": 4.0,
+    "h": 4.0,
+    "leaves": "2 x 2 m sliding, separate"
+  },
+  "window": {
+    "x": [
+      -8.0,
+      8.0
+    ],
+    "z": [
+      1.5,
+      7.5
+    ],
+    "size": [
+      16.0,
+      6.0
+    ]
+  },
+  "desks": {
+    "tier1": 6,
+    "tier2": 6,
+    "tier3": 4
+  },
+  "desk_size": [
+    2.4,
+    0.8,
+    1.1
+  ],
+  "struts_x": [
+    -9.2,
+    -5.0,
+    5.0,
+    9.2
+  ],
+  "sightlines": {
+    "aisle_foot": "12/12 window points visible",
+    "entry_door": "7/12 window points visible"
+  },
+  "landmarks": {
+    "LM_R1_Entry": [
+      -12.0,
+      -3.0,
+      0.0
+    ],
+    "LM_R1_ToR2": [
+      12.0,
+      -3.0,
+      0.0
+    ],
+    "LM_R1_Aisle": [
+      0.0,
+      -8.0,
+      0.0
+    ],
+    "LM_R1_Window": [
+      0.0,
+      9.0,
+      1.5
+    ],
+    "LM_R1_Tier1": [
+      0.0,
+      0.0,
+      0.5
+    ],
+    "LM_R1_Tier2": [
+      0.0,
+      3.0,
+      1.0
+    ],
+    "LM_R1_Tier3": [
+      0.0,
+      6.0,
+      1.5
+    ]
+  },
+  "tris_export_unique": 1665,
+  "tris_export_instanced": 3254,
+  "budget": 100000,
+  "renders": {
+    "topdown": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\R1_blockout_topdown.png",
+    "eye": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\R1_blockout_eyeheight.png"
+  },
+  "blend": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\source\\Fractured_R1_ReactorControlHall.blend"
+}

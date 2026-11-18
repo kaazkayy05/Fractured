@@ -1,0 +1,163 @@
+{
+  "arena": {
+    "diameter": 30.0,
+    "ceiling": 18.0,
+    "wall_segments": 32
+  },
+  "core": {
+    "base_diameter": 6.0,
+    "rings": 4,
+    "ring_rotation": "local Z, alternating",
+    "column_to": 18.0,
+    "collision": "12-sided cylinder r=3 to the ceiling (not climbable)"
+  },
+  "circulation_ring": {
+    "r": [
+      3.0,
+      7.0
+    ],
+    "width": 4.0,
+    "blocked_samples": "0/5006 (0 = unobstructed)"
+  },
+  "nodes": {
+    "A": {
+      "angle": 90.0,
+      "centre": [
+        0.0,
+        7.6
+      ],
+      "inner_face_r": 7.0,
+      "height": 2.5,
+      "glyph": "triangle"
+    },
+    "B": {
+      "angle": 210.0,
+      "centre": [
+        -6.582,
+        -3.8
+      ],
+      "inner_face_r": 7.0,
+      "height": 2.5,
+      "glyph": "trefoil"
+    },
+    "C": {
+      "angle": 330.0,
+      "centre": [
+        6.582,
+        -3.8
+      ],
+      "inner_face_r": 7.0,
+      "height": 2.5,
+      "glyph": "diamond"
+    }
+  },
+  "cover": [
+    {
+      "angle": 30,
+      "r": 11.0,
+      "h": 1.1
+    },
+    {
+      "angle": 60,
+      "r": 11.0,
+      "h": 1.4
+    },
+    {
+      "angle": 120,
+      "r": 11.0,
+      "h": 1.25
+    },
+    {
+      "angle": 150,
+      "r": 11.0,
+      "h": 1.1
+    },
+    {
+      "angle": 240,
+      "r": 11.0,
+      "h": 1.4
+    },
+    {
+      "angle": 270,
+      "r": 11.0,
+      "h": 1.25
+    },
+    {
+      "angle": 300,
+      "r": 11.0,
+      "h": 1.1
+    }
+  ],
+  "entrances": {
+    "A_from_R2": [
+      -13.858192987669302,
+      0,
+      0
+    ],
+    "B_alt": [
+      13.858192987669302,
+      0,
+      0
+    ],
+    "w": 6.0,
+    "h": 5.0
+  },
+  "damage": {
+    "broken_wall_segments": [
+      8,
+      19
+    ],
+    "fallen_beam_angle": 103.0
+  },
+  "violet": {
+    "material": "M_FX_Violet (R3_FX only)",
+    "fx_tris": 210,
+    "used_outside_fx": []
+  },
+  "R2_join": "translate R3 so LM_R3_FromR2 meets LM_R2_ToR3 (6 x 5 openings on both sides).",
+  "landmarks": {
+    "LM_R3_Node_A": [
+      0.0,
+      7.6,
+      0.0
+    ],
+    "LM_R3_Node_B": [
+      -6.582,
+      -3.8,
+      0.0
+    ],
+    "LM_R3_Node_C": [
+      6.582,
+      -3.8,
+      0.0
+    ],
+    "LM_R3_FractureFX": [
+      -0.585,
+      -4.159,
+      0.0
+    ],
+    "LM_R3_Core": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "LM_R3_FromR2": [
+      -13.858,
+      0.0,
+      0.0
+    ],
+    "LM_R3_ApproachB": [
+      13.858,
+      0.0,
+      0.0
+    ]
+  },
+  "tris_export_unique": 3401,
+  "tris_export_instanced": 5021,
+  "budget": 140000,
+  "renders": {
+    "topdown": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\R3_blockout_topdown.png",
+    "eye": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\R3_blockout_eyeheight.png"
+  },
+  "blend": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\source\\Fractured_R3_ConvergenceChamber.blend"
+}

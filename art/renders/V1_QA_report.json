@@ -1,0 +1,383 @@
+{
+  "asset": "V1",
+  "scale_not_applied": [],
+  "negative_scale": [],
+  "rotation_not_applied": [],
+  "instanced_rotations": 114,
+  "geometry_fail_visual": [],
+  "geometry_fail_collision": [],
+  "open_visual_meshes": [
+    "MOD_V_Floor_Broken_4x4",
+    "MOD_V_Floor_Broken_4x2",
+    "MOD_V_Wall_4x4_Office",
+    "MOD_N_DoorFrame_4x4",
+    "MOD_N_DoorFrame_2x3",
+    "SM_V1_ExitSign",
+    "MOD_N_Banner",
+    "SM_V1_Balcony",
+    "MOD_N_Railing_Glass_4m",
+    "MOD_N_Railing_Glass_2m",
+    "SM_Vessel_Base",
+    "SM_V1_FloorRing.001",
+    "MOD_V_Console_Base_Damaged",
+    "SM_Console_01_Damaged_Top",
+    "SM_Console_02_Damaged_Top",
+    "SM_Console_03_Damaged_Top",
+    "SM_Moss_Patch_01",
+    "SM_Moss_Patch_02",
+    "SM_Moss_Patch_03",
+    "MOD_V_VineCard_3.5m",
+    "MOD_V_VineCard_2.5m",
+    "MOD_N_Skylight_4x4",
+    "MOD_N_Skylight_4x2"
+  ],
+  "colonly_suffix_missing": [],
+  "collision_on_decorative": [],
+  "off_grid_modules": [],
+  "seams": {
+    "floor_tiles": 35,
+    "floor_extent": [
+      -14.0,
+      14.0,
+      -9.0,
+      9.0
+    ],
+    "floor_area": 504.0,
+    "floor_extent_area": 504.0,
+    "floor_overlap_m2": 0.0,
+    "floor_gap_m2": 0.0,
+    "wall_rows": 12,
+    "wall_seam_failures": [],
+    "wall_openings": [
+      {
+        "row": "(180, -9.0, 0.0)",
+        "gap_m": 4.0,
+        "at": -2.0
+      }
+    ]
+  },
+  "walk": {
+    "samples": 504,
+    "holes": [],
+    "slopes_over_35": [],
+    "ceilings_under_2_5": [],
+    "min_ceiling_m": 4.078,
+    "drops_guarded": 8,
+    "drops_unguarded": [],
+    "drops_designed_hazard": 0
+  },
+  "tris": {
+    "per_collection": {
+      "V1_Export": {
+        "unique": 4121,
+        "instanced": 13745
+      },
+      "V1_Roof": {
+        "unique": 328,
+        "instanced": 2324
+      },
+      "V1_Collision": {
+        "unique": 2614,
+        "instanced": 2614
+      },
+      "V1_FX": {
+        "unique": 0,
+        "instanced": 0
+      }
+    },
+    "export_unique": 4121,
+    "export_instanced": 13745,
+    "budget": 140000,
+    "within_budget": true,
+    "heaviest_meshes": [
+      [
+        "MOD_V_Wall_4x4_Seam",
+        60,
+        26
+      ],
+      [
+        "MOD_V_Wall_4x4_Office",
+        190,
+        7
+      ],
+      [
+        "MOD_N_Skylight_4x4",
+        68,
+        17
+      ],
+      [
+        "MOD_V_Wall_4x4",
+        28,
+        31
+      ],
+      [
+        "MOD_V_Root_Straight",
+        48,
+        18
+      ],
+      [
+        "MOD_V_Floor_Broken_4x4",
+        142,
+        6
+      ],
+      [
+        "MOD_V_Floor_Broken_4x2",
+        102,
+        6
+      ],
+      [
+        "MOD_V_Skylight_4x4_Broken",
+        64,
+        7
+      ],
+      [
+        "MOD_V_Floor_4x4",
+        20,
+        22
+      ],
+      [
+        "SM_V1_FloorRing.001",
+        384,
+        1
+      ],
+      [
+        "MOD_V_Root_Curve",
+        96,
+        4
+      ],
+      [
+        "SM_Vessel_Glass_Broken",
+        360,
+        1
+      ]
+    ]
+  },
+  "materials": {
+    "materials": [
+      "M_Bark",
+      "M_Charcoal",
+      "M_Cloth",
+      "M_CyanEmissive",
+      "M_Moss",
+      "M_NovaGlass",
+      "M_NovaSilver",
+      "M_VeyraConcrete"
+    ],
+    "over_4_slots": [],
+    "procedural_nodes": [],
+    "violet_outside_fx": []
+  },
+  "landmarks": {
+    "LM_Vessel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "LM_Console_01": [
+      -2.6,
+      -4.503,
+      0.0
+    ],
+    "LM_Console_02": [
+      0.0,
+      -5.2,
+      0.0
+    ],
+    "LM_Console_03": [
+      2.6,
+      -4.503,
+      0.0
+    ],
+    "LM_Exit_Main": [
+      0.0,
+      -9.0,
+      0.0
+    ],
+    "LM_Exit_Side": [
+      14.0,
+      -7.0,
+      0.0
+    ],
+    "LM_BalconyStair": [
+      13.0,
+      -1.2,
+      0.0
+    ],
+    "LM_BalconyStair_Top": [
+      13.0,
+      6.0,
+      4.5
+    ],
+    "LM_RootRamp": [
+      -11.8,
+      -2.8,
+      0.0
+    ],
+    "LM_RootRamp_Top": [
+      -11.8,
+      6.0,
+      4.53
+    ]
+  },
+  "landmark_pair": {
+    "LM_BalconyStair": {
+      "this": [
+        13.0,
+        -1.2,
+        0.0
+      ],
+      "pair": [
+        13.0,
+        -1.2,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_BalconyStair_Top": {
+      "this": [
+        13.0,
+        6.0,
+        4.5
+      ],
+      "pair": [
+        13.0,
+        6.0,
+        4.5
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Console_01": {
+      "this": [
+        -2.6,
+        -4.503,
+        0.0
+      ],
+      "pair": [
+        -2.6,
+        -4.503,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Console_02": {
+      "this": [
+        0.0,
+        -5.2,
+        0.0
+      ],
+      "pair": [
+        0.0,
+        -5.2,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Console_03": {
+      "this": [
+        2.6,
+        -4.503,
+        0.0
+      ],
+      "pair": [
+        2.6,
+        -4.503,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Exit_Main": {
+      "this": [
+        0.0,
+        -9.0,
+        0.0
+      ],
+      "pair": [
+        0.0,
+        -9.0,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Exit_Side": {
+      "this": [
+        14.0,
+        -7.0,
+        0.0
+      ],
+      "pair": [
+        14.0,
+        -7.0,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    },
+    "LM_Vessel": {
+      "this": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pair": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delta_m": 0.0,
+      "ok": true
+    }
+  },
+  "landmark_pair_missing_here": [],
+  "landmark_only_here": [
+    "LM_RootRamp",
+    "LM_RootRamp_Top"
+  ],
+  "landmark_pair_ok": true,
+  "pass": true,
+  "v1_changes": {
+    "floor_tiles_broken": "12/35 (34%)",
+    "vessel_glass_remaining": "40.0%",
+    "moss_coverage": "7.6% of floor+balcony (limit 15%)",
+    "skylight_panes_missing": "14/35 (40%)"
+  },
+  "ramp": {
+    "x": [
+      -13.6,
+      -10.0
+    ],
+    "y": [
+      -2.8,
+      6.0
+    ],
+    "top": 4.53,
+    "slope_deg": 27.2,
+    "deck_width": 3.5999999999999996,
+    "clear_between_roots": 2.41
+  },
+  "rotations_baked": [],
+  "renders": {
+    "topdown": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\V1_detail_topdown.png",
+    "eye": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\V1_detail_eyeheight.png",
+    "hero": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\V1_detail_hero34.png",
+    "ramp_route": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\V1_detail_ramp_route.png",
+    "eye_flat_ambient": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\V1_detail_eyeheight_flat.png"
+  },
+  "blend": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\source\\Fractured_V1_ReclaimedResearchFacility.blend",
+  "export": {
+    "glb_bytes": 432060,
+    "exported_objects": 260,
+    "reimported_objects": 260,
+    "missing_after_reimport": [],
+    "origin_mismatch": [],
+    "colonly_exported": 20,
+    "colonly_reimported": 20,
+    "ok": true
+  },
+  "glb": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\export\\Fractured_V1_ReclaimedResearchFacility.glb"
+}

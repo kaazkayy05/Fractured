@@ -1,0 +1,729 @@
+{
+  "footprint_interior_m": [
+    36.0,
+    20.0
+  ],
+  "vault": {
+    "spring_z": 8.0,
+    "apex_z": 12.0,
+    "radius": 14.5
+  },
+  "canal": {
+    "width": 5.0,
+    "floor_z": -2.0,
+    "water_z": -0.8
+  },
+  "banks": {
+    "width": 7.5,
+    "curb_h": 0.3,
+    "promenade_abs_y": [
+      3.3,
+      6.3
+    ]
+  },
+  "bridge": {
+    "width": 3.0,
+    "span_y": [
+      -4.0,
+      4.0
+    ],
+    "rise": 0.6,
+    "max_slope_deg": 16.7
+  },
+  "canal_stairs": {
+    "width": 1.5,
+    "risers": 11,
+    "rise": 0.1818,
+    "tread": 0.3,
+    "run": 3.0,
+    "top_x": {
+      "N": 11.0,
+      "S": -11.0
+    }
+  },
+  "shops": {
+    "x": [
+      -8.0,
+      4.0
+    ],
+    "opening": [
+      3.0,
+      3.0
+    ],
+    "shutter_bottom_z": 2.2,
+    "interior": "4 x 4 x 3.2 m"
+  },
+  "stalls": {
+    "x": [
+      -13.5,
+      -2.0,
+      9.5
+    ],
+    "w": 3.0,
+    "d": 2.0,
+    "centre_abs_y": 8.4
+  },
+  "min_stall_to_shopfront_gap_m": 2.1,
+  "loading": {
+    "wall": "+X",
+    "y": [
+      -9.2,
+      -3.2
+    ],
+    "w": 6,
+    "h": 5,
+    "stub": "4 m"
+  },
+  "entrance": {
+    "wall": "-X",
+    "y": [
+      4.5,
+      8.5
+    ],
+    "w": 4,
+    "h": 4
+  },
+  "promenades_3m": {
+    "N": {
+      "lane_abs_y": [
+        3.3,
+        6.3
+      ],
+      "obstacles": [
+        "SM_N4_DoorFrame_Entrance"
+      ]
+    },
+    "S": {
+      "lane_abs_y": [
+        3.3,
+        6.3
+      ],
+      "obstacles": [
+        "SM_N4_LoadingDoor"
+      ]
+    }
+  },
+  "landmarks": {
+    "LM_Shop_N1": [
+      -8.0,
+      10.0,
+      0.0
+    ],
+    "LM_Shop_N2": [
+      4.0,
+      10.0,
+      0.0
+    ],
+    "LM_Shop_S1": [
+      -8.0,
+      -10.0,
+      0.0
+    ],
+    "LM_Shop_S2": [
+      4.0,
+      -10.0,
+      0.0
+    ],
+    "LM_Stall_N1": [
+      -13.5,
+      8.4,
+      0.0
+    ],
+    "LM_Stall_N2": [
+      -2.0,
+      8.4,
+      0.0
+    ],
+    "LM_Stall_N3": [
+      9.5,
+      8.4,
+      0.0
+    ],
+    "LM_Stall_S1": [
+      -13.5,
+      -8.4,
+      0.0
+    ],
+    "LM_Stall_S2": [
+      -2.0,
+      -8.4,
+      0.0
+    ],
+    "LM_Stall_S3": [
+      9.5,
+      -8.4,
+      0.0
+    ],
+    "LM_Canal": [
+      0.0,
+      0.0,
+      -2.0
+    ],
+    "LM_Bridge": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "LM_Bank_N": [
+      0.0,
+      4.8,
+      0.0
+    ],
+    "LM_Bank_S": [
+      0.0,
+      -4.8,
+      0.0
+    ],
+    "LM_CanalStair_N": [
+      11.0,
+      1.75,
+      -2.0
+    ],
+    "LM_CanalStair_S": [
+      -11.0,
+      -1.75,
+      -2.0
+    ],
+    "LM_Loading": [
+      18.0,
+      -6.2,
+      0.0
+    ],
+    "LM_Entrance": [
+      -18.0,
+      6.5,
+      0.0
+    ]
+  },
+  "tris_export_unique": 3594,
+  "tris_export_instanced": 12616,
+  "budget": 150000,
+  "renders": {
+    "topdown": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\N4_detail_topdown.png",
+    "eye": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\N4_detail_eyeheight.png",
+    "hero": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\N4_detail_hero34.png",
+    "shop": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\N4_detail_shop.png",
+    "eye_flat_ambient": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\N4_detail_eyeheight_flat.png"
+  },
+  "qa": {
+    "asset": "N4",
+    "scale_not_applied": [],
+    "negative_scale": [],
+    "rotation_not_applied": [],
+    "instanced_rotations": 78,
+    "geometry_fail_visual": [],
+    "geometry_fail_collision": [],
+    "open_visual_meshes": [
+      "SM_Canal_Water",
+      "MOD_N_LoadingDoor",
+      "SM_N4_Sign_Loading",
+      "SM_N4_Sign_Entrance",
+      "SM_N4_LoadingStub",
+      "MOD_N_DoorFrame_4x4",
+      "SM_N4_EntranceStub",
+      "SM_N4_CulvertStub_E",
+      "SM_N4_CulvertStub_W",
+      "MOD_N_ShopFront",
+      "MOD_N_ShopInterior"
+    ],
+    "colonly_suffix_missing": [],
+    "collision_on_decorative": [],
+    "off_grid_modules": [],
+    "seams": {
+      "floor_tiles": 63,
+      "floor_extent": [
+        -18.0,
+        18.0,
+        -10.0,
+        10.0
+      ],
+      "floor_area": 720.0,
+      "floor_extent_area": 720.0,
+      "floor_overlap_m2": 0.0,
+      "floor_gap_m2": -9e-06,
+      "wall_rows": 4,
+      "wall_seam_failures": [],
+      "wall_openings": []
+    },
+    "walk": {
+      "samples": 720,
+      "holes": [],
+      "slopes_over_35": [],
+      "ceilings_under_2_5": [],
+      "min_ceiling_m": 2.777,
+      "drops_guarded": 0,
+      "drops_unguarded": [],
+      "drops_designed_hazard": 0
+    },
+    "tris": {
+      "per_collection": {
+        "N4_Export": {
+          "unique": 3594,
+          "instanced": 12616
+        },
+        "N4_Roof": {
+          "unique": 264,
+          "instanced": 2508
+        },
+        "N4_Market": {
+          "unique": 798,
+          "instanced": 3836
+        },
+        "N4_Collision": {
+          "unique": 1360,
+          "instanced": 1360
+        },
+        "N4_FX": {
+          "unique": 0,
+          "instanced": 0
+        }
+      },
+      "export_unique": 3594,
+      "export_instanced": 12616,
+      "budget": 150000,
+      "within_budget": true,
+      "heaviest_meshes": [
+        [
+          "MOD_N_ShopInterior",
+          394,
+          4
+        ],
+        [
+          "MOD_N_RoofRib",
+          132,
+          10
+        ],
+        [
+          "MOD_N_RoofBay_4m",
+          132,
+          9
+        ],
+        [
+          "SM_N4_Bridge",
+          588,
+          1
+        ],
+        [
+          "MOD_N_Bollard",
+          40,
+          14
+        ],
+        [
+          "MOD_N_Wall_4x4_Top",
+          28,
+          18
+        ],
+        [
+          "MOD_N_Stall_AwningFrame",
+          84,
+          6
+        ],
+        [
+          "MOD_N_Stall_AwningCloth",
+          82,
+          6
+        ],
+        [
+          "SM_N4_Sign_Loading",
+          476,
+          1
+        ],
+        [
+          "MOD_N_ShopFront",
+          118,
+          4
+        ],
+        [
+          "MOD_N_Stall_Shelf",
+          72,
+          6
+        ],
+        [
+          "MOD_N_Floor_CanalEdge_4x1.5",
+          20,
+          18
+        ]
+      ]
+    },
+    "materials": {
+      "materials": [
+        "M_AmberWarning",
+        "M_Bark",
+        "M_Charcoal",
+        "M_CyanEmissive",
+        "M_NovaGlass",
+        "M_NovaSilver",
+        "M_Water"
+      ],
+      "over_4_slots": [],
+      "procedural_nodes": [],
+      "violet_outside_fx": []
+    },
+    "landmarks": {
+      "LM_Shop_N1": [
+        -8.0,
+        10.0,
+        0.0
+      ],
+      "LM_Shop_N2": [
+        4.0,
+        10.0,
+        0.0
+      ],
+      "LM_Shop_S1": [
+        -8.0,
+        -10.0,
+        0.0
+      ],
+      "LM_Shop_S2": [
+        4.0,
+        -10.0,
+        0.0
+      ],
+      "LM_Stall_N1": [
+        -13.5,
+        8.4,
+        0.0
+      ],
+      "LM_Stall_N2": [
+        -2.0,
+        8.4,
+        0.0
+      ],
+      "LM_Stall_N3": [
+        9.5,
+        8.4,
+        0.0
+      ],
+      "LM_Stall_S1": [
+        -13.5,
+        -8.4,
+        0.0
+      ],
+      "LM_Stall_S2": [
+        -2.0,
+        -8.4,
+        0.0
+      ],
+      "LM_Stall_S3": [
+        9.5,
+        -8.4,
+        0.0
+      ],
+      "LM_Canal": [
+        0.0,
+        0.0,
+        -2.0
+      ],
+      "LM_Bridge": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "LM_Bank_N": [
+        0.0,
+        4.8,
+        0.0
+      ],
+      "LM_Bank_S": [
+        0.0,
+        -4.8,
+        0.0
+      ],
+      "LM_CanalStair_N": [
+        11.0,
+        1.75,
+        -2.0
+      ],
+      "LM_CanalStair_S": [
+        -11.0,
+        -1.75,
+        -2.0
+      ],
+      "LM_Loading": [
+        18.0,
+        -6.2,
+        0.0
+      ],
+      "LM_Entrance": [
+        -18.0,
+        6.5,
+        0.0
+      ]
+    },
+    "landmark_pair": {
+      "LM_Bank_N": {
+        "this": [
+          0.0,
+          4.8,
+          0.0
+        ],
+        "pair": [
+          0.0,
+          4.8,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_Bank_S": {
+        "this": [
+          0.0,
+          -4.8,
+          0.0
+        ],
+        "pair": [
+          0.0,
+          -4.8,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_Bridge": {
+        "this": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "pair": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_Canal": {
+        "this": [
+          0.0,
+          0.0,
+          -2.0
+        ],
+        "pair": [
+          0.0,
+          0.0,
+          -2.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_CanalStair_N": {
+        "this": [
+          11.0,
+          1.75,
+          -2.0
+        ],
+        "pair": [
+          11.0,
+          1.75,
+          -2.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_CanalStair_S": {
+        "this": [
+          -11.0,
+          -1.75,
+          -2.0
+        ],
+        "pair": [
+          -11.0,
+          -1.75,
+          -2.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_Entrance": {
+        "this": [
+          -18.0,
+          6.5,
+          0.0
+        ],
+        "pair": [
+          -18.0,
+          6.5,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_Loading": {
+        "this": [
+          18.0,
+          -6.2,
+          0.0
+        ],
+        "pair": [
+          18.0,
+          -6.2,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_Shop_N1": {
+        "this": [
+          -8.0,
+          10.0,
+          0.0
+        ],
+        "pair": [
+          -8.0,
+          10.0,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_Shop_N2": {
+        "this": [
+          4.0,
+          10.0,
+          0.0
+        ],
+        "pair": [
+          4.0,
+          10.0,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_Shop_S1": {
+        "this": [
+          -8.0,
+          -10.0,
+          0.0
+        ],
+        "pair": [
+          -8.0,
+          -10.0,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_Shop_S2": {
+        "this": [
+          4.0,
+          -10.0,
+          0.0
+        ],
+        "pair": [
+          4.0,
+          -10.0,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_Stall_N1": {
+        "this": [
+          -13.5,
+          8.4,
+          0.0
+        ],
+        "pair": [
+          -13.5,
+          8.4,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_Stall_N2": {
+        "this": [
+          -2.0,
+          8.4,
+          0.0
+        ],
+        "pair": [
+          -2.0,
+          8.4,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_Stall_N3": {
+        "this": [
+          9.5,
+          8.4,
+          0.0
+        ],
+        "pair": [
+          9.5,
+          8.4,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_Stall_S1": {
+        "this": [
+          -13.5,
+          -8.4,
+          0.0
+        ],
+        "pair": [
+          -13.5,
+          -8.4,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_Stall_S2": {
+        "this": [
+          -2.0,
+          -8.4,
+          0.0
+        ],
+        "pair": [
+          -2.0,
+          -8.4,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      },
+      "LM_Stall_S3": {
+        "this": [
+          9.5,
+          -8.4,
+          0.0
+        ],
+        "pair": [
+          9.5,
+          -8.4,
+          0.0
+        ],
+        "delta_m": 0.0,
+        "ok": true
+      }
+    },
+    "landmark_pair_missing_here": [],
+    "landmark_only_here": [],
+    "landmark_pair_ok": true,
+    "pass": true,
+    "export": {
+      "glb_bytes": 291892,
+      "exported_objects": 247,
+      "reimported_objects": 247,
+      "missing_after_reimport": [],
+      "origin_mismatch": [],
+      "colonly_exported": 17,
+      "colonly_reimported": 17,
+      "ok": true
+    }
+  },
+  "rotations_baked": [
+    "SM_N4_Sign_Loading",
+    "SM_N4_Sign_Entrance"
+  ],
+  "blend": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\source\\Fractured_N4_CanalMarket.blend",
+  "glb": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\export\\Fractured_N4_CanalMarket.glb"
+}

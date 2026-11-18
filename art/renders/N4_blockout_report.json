@@ -1,0 +1,206 @@
+{
+  "footprint_interior_m": [
+    36.0,
+    20.0
+  ],
+  "vault": {
+    "spring_z": 8.0,
+    "apex_z": 12.0,
+    "radius": 14.5
+  },
+  "canal": {
+    "width": 5.0,
+    "floor_z": -2.0,
+    "water_z": -0.8
+  },
+  "banks": {
+    "width": 7.5,
+    "curb_h": 0.3,
+    "promenade_abs_y": [
+      3.3,
+      6.3
+    ]
+  },
+  "bridge": {
+    "width": 3.0,
+    "span_y": [
+      -4.0,
+      4.0
+    ],
+    "rise": 0.6,
+    "max_slope_deg": 16.7
+  },
+  "canal_stairs": {
+    "width": 1.5,
+    "risers": 11,
+    "rise": 0.1818,
+    "tread": 0.3,
+    "run": 3.0,
+    "top_x": {
+      "N": 11.0,
+      "S": -11.0
+    }
+  },
+  "shops": {
+    "x": [
+      -8.0,
+      4.0
+    ],
+    "opening": [
+      3.0,
+      3.0
+    ],
+    "shutter_bottom_z": 2.2,
+    "interior": "4 x 4 x 3.2 m"
+  },
+  "stalls": {
+    "x": [
+      -13.5,
+      -2.0,
+      9.5
+    ],
+    "w": 3.0,
+    "d": 2.0,
+    "centre_abs_y": 8.4
+  },
+  "min_stall_to_shopfront_gap_m": 2.1,
+  "loading": {
+    "wall": "+X",
+    "y": [
+      -9.2,
+      -3.2
+    ],
+    "w": 6,
+    "h": 5,
+    "stub": "4 m"
+  },
+  "entrance": {
+    "wall": "-X",
+    "y": [
+      4.5,
+      8.5
+    ],
+    "w": 4,
+    "h": 4
+  },
+  "promenades_3m": {
+    "N": {
+      "lane_abs_y": [
+        3.3,
+        6.3
+      ],
+      "obstacles": [
+        "SM_N4_DoorFrame_Entrance"
+      ]
+    },
+    "S": {
+      "lane_abs_y": [
+        3.3,
+        6.3
+      ],
+      "obstacles": [
+        "SM_N4_LoadingDoor"
+      ]
+    }
+  },
+  "landmarks": {
+    "LM_Shop_N1": [
+      -8.0,
+      10.0,
+      0.0
+    ],
+    "LM_Shop_N2": [
+      4.0,
+      10.0,
+      0.0
+    ],
+    "LM_Shop_S1": [
+      -8.0,
+      -10.0,
+      0.0
+    ],
+    "LM_Shop_S2": [
+      4.0,
+      -10.0,
+      0.0
+    ],
+    "LM_Stall_N1": [
+      -13.5,
+      8.4,
+      0.0
+    ],
+    "LM_Stall_N2": [
+      -2.0,
+      8.4,
+      0.0
+    ],
+    "LM_Stall_N3": [
+      9.5,
+      8.4,
+      0.0
+    ],
+    "LM_Stall_S1": [
+      -13.5,
+      -8.4,
+      0.0
+    ],
+    "LM_Stall_S2": [
+      -2.0,
+      -8.4,
+      0.0
+    ],
+    "LM_Stall_S3": [
+      9.5,
+      -8.4,
+      0.0
+    ],
+    "LM_Canal": [
+      0.0,
+      0.0,
+      -2.0
+    ],
+    "LM_Bridge": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "LM_Bank_N": [
+      0.0,
+      4.8,
+      0.0
+    ],
+    "LM_Bank_S": [
+      0.0,
+      -4.8,
+      0.0
+    ],
+    "LM_CanalStair_N": [
+      11.0,
+      1.75,
+      -2.0
+    ],
+    "LM_CanalStair_S": [
+      -11.0,
+      -1.75,
+      -2.0
+    ],
+    "LM_Loading": [
+      18.0,
+      -6.2,
+      0.0
+    ],
+    "LM_Entrance": [
+      -18.0,
+      6.5,
+      0.0
+    ]
+  },
+  "tris_export_unique": 2232,
+  "tris_export_instanced": 10306,
+  "budget": 150000,
+  "renders": {
+    "topdown": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\N4_blockout_topdown.png",
+    "eye": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\renders\\N4_blockout_eyeheight.png"
+  },
+  "blend": "C:\\Users\\zcamk\\Godot Projects\\Fractured\\art\\source\\Fractured_N4_CanalMarket.blend"
+}
