@@ -6,6 +6,9 @@ const TITLES: Array[String] = ["Inspect the station crystal", "Reach the east en
 const POINTS: Array[Vector3] = [Vector3(-161.28, 6, 229.42), Vector3(-135.5, 6, 251.42), Vector3(-104, 4.5, 251.42), Vector3(-78, 6, 352), Vector3(-104, 4.5, 251.42)]
 const REQUIRED_REALITIES: Array[int] = [0, 0, 0, 1, 0]
 const TRAINING_TARGETS: Array[Vector3] = [Vector3(-135.5, 6, 255.5), Vector3(-78, 6, 356)]
+const ECHO_REPLAY_SECONDS := 8.0
+const ECHO_LIFETIME_SECONDS := 8.0
+const ECHO_COOLDOWN_SECONDS := 10.0
 
 var worlds: Array[Node3D] = []
 var bodies: Array[StaticBody3D] = []
@@ -29,6 +32,18 @@ var target_health: Dictionary = {}
 var target_reset_timers: Dictionary = {}
 var feedback: String = ""
 var feedback_timer: float = 0.0
+var movement_time := 0.0
+var movement_times: Array[float] = []
+var movement_positions: Array[Vector3] = []
+var echo: Node3D
+var echo_reality := 0
+var echo_cooldown := 0.0
+var echo_remaining := 0.0
+var echo_replay_elapsed := 0.0
+var echo_path_start := 0.0
+var echo_times: Array[float] = []
+var echo_positions: Array[Vector3] = []
+var echo_segment := 0
 
 func _ready() -> void:
 	for path: String in FILES:
@@ -52,6 +67,7 @@ func _ready() -> void:
 	_build_hud()
 	add_promenade_link()
 	switch_world(0)
+	_reset_movement_history()
 	update_target()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -172,6 +188,7 @@ func reality_shift() -> void:
 		_show_message("No safe position found in %s." % NAMES[target_reality])
 		return
 	player.position = safe_spot
+	_reset_movement_history()
 	shift_in_progress = false
 	shift_cooldown = 3.0
 	_add_instability(5.0)
@@ -312,9 +329,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			KEY_ESCAPE: Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			KEY_Q: reality_shift()
 			KEY_F: fracture_burst()
+			KEY_C: _try_spawn_echo()
 			KEY_R:
 				player.position = checkpoints[timeline]
 				player.velocity = Vector3.ZERO
+				_reset_movement_history()
 			KEY_SPACE:
 				if player.is_on_floor(): player.velocity.y = 6.0
 			KEY_E:
@@ -325,6 +344,8 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(dt: float) -> void:
 	if worlds.size() != 2:
 		return
+	movement_time += dt
+	echo_cooldown = maxf(0.0, echo_cooldown - dt)
 	shift_cooldown = maxf(0.0, shift_cooldown - dt)
 	burst_cooldown = maxf(0.0, burst_cooldown - dt)
 	feedback_timer = maxf(0.0, feedback_timer - dt)
@@ -359,7 +380,81 @@ func _physics_process(dt: float) -> void:
 	if player.position.y < -10.0:
 		player.position = checkpoints[timeline]
 		player.velocity = Vector3.ZERO
+		_reset_movement_history()
+	else:
+		_record_movement()
+	_update_echo(dt)
 	_update_hud()
+
+func _reset_movement_history() -> void:
+	movement_times.clear()
+	movement_positions.clear()
+	_record_movement()
+
+func _record_movement() -> void:
+	movement_times.append(movement_time)
+	movement_positions.append(player.position)
+	var cutoff := movement_time - ECHO_REPLAY_SECONDS
+	# Keep the sample at or just before the cutoff for interpolation.
+	while movement_times.size() > 1 and movement_times[1] <= cutoff:
+		movement_times.pop_front()
+		movement_positions.pop_front()
+
+func _try_spawn_echo() -> void:
+	if echo_cooldown > 0.0:
+		_show_message("Your echo isn’t ready yet.")
+		return
+	if is_instance_valid(echo):
+		_show_message("An echo is already active")
+		return
+	var start_time := movement_time - ECHO_REPLAY_SECONDS
+	if movement_times.size() < 2 or movement_times[0] > start_time:
+		_show_message("Echo Projection needs 8 seconds of movement history.")
+		return
+
+	echo_times = movement_times.duplicate()
+	echo_positions = movement_positions.duplicate()
+	echo_path_start = start_time
+	echo_segment = 0
+	echo_replay_elapsed = 0.0
+	echo_remaining = ECHO_LIFETIME_SECONDS
+	echo_reality = timeline
+
+	var capsule := CapsuleMesh.new()
+	capsule.radius = 0.4
+	capsule.height = 1.8
+	var material := StandardMaterial3D.new()
+	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	material.albedo_color = Color("#DCE6EE")
+	var visual := MeshInstance3D.new()
+	visual.mesh = capsule
+	visual.material_override = material
+	visual.position.y = 0.9
+
+	echo = Node3D.new()
+	echo.position = _echo_position_at(start_time)
+	echo.add_child(visual)
+	add_child(echo)
+	echo_cooldown = ECHO_COOLDOWN_SECONDS
+
+func _echo_position_at(sample_time: float) -> Vector3:
+	while echo_segment + 1 < echo_times.size() - 1 and echo_times[echo_segment + 1] <= sample_time:
+		echo_segment += 1
+	var next := echo_segment + 1
+	var weight := inverse_lerp(echo_times[echo_segment], echo_times[next], sample_time)
+	return echo_positions[echo_segment].lerp(echo_positions[next], weight)
+
+func _update_echo(dt: float) -> void:
+	if not is_instance_valid(echo):
+		return
+	echo_remaining = maxf(0.0, echo_remaining - dt)
+	if echo_remaining <= 0.0:
+		echo.queue_free()
+		echo = null
+		return
+	echo.visible = echo_reality == timeline
+	echo_replay_elapsed = minf(echo_replay_elapsed + dt, ECHO_REPLAY_SECONDS)
+	echo.position = _echo_position_at(echo_path_start + echo_replay_elapsed)
 
 func _update_hud() -> void:
 	var shift_text: String = "ready" if shift_cooldown <= 0.0 else "%.1fs" % shift_cooldown
