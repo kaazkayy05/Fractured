@@ -164,7 +164,8 @@ func _physics_process(delta: float) -> void:
 	_body_mat.albedo_color = Palette.SILVER.lerp(Color(1, 0.3, 0.2), _hurt * 4.0)
 	if dead:
 		return
-	var can_act := control_enabled and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
+	# abilities work even if the browser refused pointer lock (mouse look then just needs a click)
+	var can_act := control_enabled
 	var input := Input.get_vector("move_left", "move_right", "move_forward", "move_back") if control_enabled else Vector2.ZERO
 	var fwd := aim_forward()
 	var right := fwd.cross(Vector3.UP)

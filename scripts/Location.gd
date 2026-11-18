@@ -156,16 +156,11 @@ static func node_pos(room: Node, node_name: String, fallback: Vector3) -> Vector
 
 
 func load_city(path: String, reality: int, with_collision := true) -> Node3D:
-	## The team's Nova/Veyra city meshes live in playtest/ (a nested Godot project, so not imported here).
-	## Load them straight from the .glb at runtime, like playtest/crossing.gd does.
-	var abs_path := ProjectSettings.globalize_path(path)
-	if not FileAccess.file_exists(abs_path):
+	## The team's Nova/Veyra city meshes (web-weight copies in res://cities/). Collision comes from the
+	## hidden WalkGeometry mesh, exactly like playtest/crossing.gd.
+	if not ResourceLoader.exists(path):
 		return null
-	var doc := GLTFDocument.new()
-	var st := GLTFState.new()
-	if doc.append_from_file(abs_path, st) != OK:
-		return null
-	var city := doc.generate_scene(st) as Node3D
+	var city := (load(path) as PackedScene).instantiate() as Node3D
 	add_child(city)
 	var walk := city.find_children("WalkGeometry*", "MeshInstance3D", true, false)
 	if walk.size() > 0:

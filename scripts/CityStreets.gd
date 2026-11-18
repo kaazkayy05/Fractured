@@ -7,8 +7,9 @@ extends Location
 
 const NOVA := RealityManager.Reality.NOVA
 const VEYRA := RealityManager.Reality.VEYRA
-const CITY_NOVA := "res://playtest/worlds/nova.glb"
-const CITY_VEYRA := "res://playtest/worlds/veyra.glb"
+# web-weight copies of playtest/worlds/{nova,veyra}.glb made by art/scripts/build_city_web.py
+const CITY_NOVA := "res://cities/nova_web.glb"
+const CITY_VEYRA := "res://cities/veyra_web.glb"
 
 # route points from playtest/crossing.gd
 const STATION_CRYSTAL := Vector3(-161.28, 6, 229.42)

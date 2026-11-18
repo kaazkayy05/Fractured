@@ -4,7 +4,11 @@ Fractured is a 3D action adventure set in two connected realities, Nova and Veyr
 
 ## Play the full story (Scenes 1–8)
 
-Open the **root** `project.godot` in Godot 4.7.2 and press F5. The game runs the whole scene breakdown in order: Research Facility, City Streets, Transit Station, Central Reactor, then the merged city and credits. City Streets loads the team's Nova/Veyra city meshes straight from `playtest/worlds/`, so run `git lfs pull` first. Without them a placeholder street is used.
+**Play in the browser:** https://kaazkayy05.github.io/Fractured/ (built from the `gh-pages` branch).
+
+Or open the **root** `project.godot` in Godot 4.7.2 (after `git lfs pull`) and press F5. The game runs the whole scene breakdown in order: Research Facility, City Streets, Transit Station, Central Reactor, then the merged city and credits. City Streets uses web-weight copies of the team's Nova/Veyra city meshes (`cities/`), made from `playtest/worlds/` by `art/scripts/build_city_web.py`.
+
+To rebuild the browser version: Project → Export → Web, which writes `build/web/`. Then publish that folder to the `gh-pages` branch.
 
 | Key | Action | Unlocked in |
 | --- | --- | --- |
