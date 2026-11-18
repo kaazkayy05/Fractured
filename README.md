@@ -1,30 +1,23 @@
 # Fractured
-A 3D action-adventure game featuring two interconnected realities.
 
-Kayla's Mechanics:
-- Mechanic #1: Echo Projection: Press C, The player creates a temporary copy of themselves in their current reality.
-- Mechanic #2: Rift Recall: Press V, The player can teleport back to the location of their active Echo Projection.
+Fractured is a 3D action adventure set in two connected realities, Nova and Veyra. The canal crossing is the current playable slice: explore the Nova transit station, cross between the cities, recover the echo, and return to the fracture.
 
-Hali – Reality Shift & Fracture Energy
+## Play the crossing
 
-- **Reality Shift (Q):** Switch between realities with a 3-second cooldown, affecting world instability.
-- **Fracture Energy (F):** Collect energy to unleash bursts that damage enemies and structures.
-- **Integration:** Both mechanics interact with world instability and environmental changes.
+Install Git LFS before cloning, or run `git lfs pull` in an existing clone. Open `playtest/project.godot` in Godot 4.7.2, let the city meshes import, and press F5.
 
+## Hali's mechanics in the crossing
 
-### Megan – Structural Manipulation & Environmental Chain Reactions
+- **Q — Reality Shift:** Switch between Nova and Veyra in place, with a 3 second cooldown. The shift preserves movement momentum and adds 5 instability. If the destination is blocked, the player moves to the nearest safe spot.
+- **Left click — Attack:** A successful hit on an enemy or fracture target grants 5 Fracture Energy, up to 100. Stationary fracture targets in the crossing make the energy loop testable before combat is added.
+- **F — Fracture Burst:** Spend 40 energy to deal 25 damage within 4 meters. Burst cooldown is 5 seconds and each burst adds 15 instability. The integration supports damageable enemies and unstable structures that expose `take_damage` or `apply_damage`; enemies can expose `interrupt_attack` for the burst interrupt.
+- Shifting at 60 or higher instability grants 10 additional Fracture Energy. If instability does not rise for 10 seconds, it decays by 1 point every 3 seconds.
 
-**Mechanic #1: Structural Manipulation (E)**
-- Interact with unstable structures within 3 meters.
-- Each structure has 0–100 stability.
-- Each interaction reduces stability by 25 points.
-- Structures collapse or transform when stability reaches 0.
+The objective flow now asks the player to shift into the reality required for each route step. Q controls the world change; interacting with the route marker no longer shifts realities automatically.
 
-**Mechanic #2: Environmental Chain Reactions (G)**
-- Trigger energy pulses that affect connected structures within 6 meters.
-- The ability has a 10-second cooldown.
-- Each additional reaction increases local instability by 10 points.
-- Reactions can disable machinery, create hazards, or open pathways.
+## Project files
 
-**Integration:** Structural Manipulation weakens objects, making chain reactions more effective. Chain reactions damage nearby structures, allowing new interactions. Environmental changes also affect enemy movement and pathways.
-Play the [Fractured canal crossing prototype](playtest/README.md) by opening playtest/project.godot in Godot 4.7.2.
+- `playtest/`: Godot Compatibility renderer scene, crossing controller, and Nova/Veyra city meshes
+- `interiors/`: transit station blockout, Blender source, production scripts, and review renders
+
+The current slice is built from the team's scenery work. Story locations beyond the canal crossing and final art polish remain future work.

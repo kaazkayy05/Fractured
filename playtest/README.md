@@ -4,4 +4,6 @@ Install Git LFS before cloning, or run `git lfs pull` in an existing clone. Open
 
 Begin at the Nova transit station. Follow the diamond, cross to Veyra, collect the echo, and return. Use WASD and the mouse to move and look, Shift to sprint, Space to jump, E to interact, and R to recover at your checkpoint.
 
+Hali's mechanics are integrated into the crossing: Q shifts realities, left click attacks visible targets, and F releases a Fracture Burst. Attacks on fracture targets charge energy so you can try the burst. The HUD shows energy, instability, and ability cooldowns. Use Q to enter the reality shown by the current objective before interacting with its marker.
+
 The Godot project includes the two city meshes and their collision geometry. The editable Nova station blockout and Blender production scripts are in `interiors/`.
